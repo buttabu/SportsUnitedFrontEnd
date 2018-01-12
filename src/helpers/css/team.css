@@ -1,0 +1,24 @@
+/* ====================================== */
+/* ============= TEAM CSS ============= */
+/* ====================================== */
+
+.team-photo{
+  height: 400px;
+  overflow: hidden;
+}
+
+.t-photo{
+  min-width: 100%;
+  height: inherit;
+  object-fit: cover;
+  margin-top: -60px;
+}
+
+.team-photo .t-photo{
+  -webkit-transform: scale(1.3);
+ transform:scale(1.3);
+  -ms-transform:scale(1.3);  /*IE 9*/
+  -moz-transform:scale(1.3); /*Firefox*/
+  -webkit-transform:scale(1.3); /*Safari and Chrome*/
+  -o-transform:scale(1.3); /*Opera*/
+}

@@ -1,0 +1,60 @@
+/* ====================================== */
+/* ============= ATHLETE CSS ============= */
+/* ====================================== */
+
+/* ============= HEADER ============= */
+
+.athlete-header{
+  height: 400px;
+  /*background-color: #2996cc;*/
+  margin-top: -75px;
+}
+
+.a-header-image{
+  padding-right: 0px;
+}
+
+/*.header-item p{
+  letter-spacing: 2px;
+}*/
+
+.athlete-photo{
+  height: 399px;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.athlete-photo .img-responsive{
+  margin-top: -240px;
+}
+
+.athlete-register-btn{
+  display: inline-block;
+  border-radius: 3px;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
+  background-color: #266489;
+  width: 250px;
+  padding: 15px 0;
+}
+
+.athlete-message{
+  position: absolute;
+  top: 20%;
+  left: 1%;
+  border: 3px solid white;
+  color: white;
+  border-radius: 11px;
+  padding: 20px;
+  text-align: center;
+  letter-spacing: 4px;
+  font-size: 32px;
+  background-color: #00000074;
+}
+

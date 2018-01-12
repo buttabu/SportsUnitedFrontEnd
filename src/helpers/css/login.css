@@ -1,0 +1,57 @@
+/* ===================================== */
+/* ============= LOGIN CSS ============= */
+/* ===================================== */
+
+/* ============= FORM FIELDS ============= */
+
+.loginform .form-field-area{
+  margin-bottom: 12px;
+  height: 55px;
+}
+
+.loginform .form-field-area .form-control{
+  font-size: 20px;
+  border-radius: 0;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  border-bottom-width: 2px;
+  background-color: transparent;
+  box-shadow: none;
+  border-bottom-color: rgba(76,88,111,.76);
+}
+
+.loginform .form-field-area .form-control:focus{
+  border-bottom-color: rgb(102, 175, 233);
+  border-bottom-width: 3px;
+}
+
+.label-title{
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+/* ============= BTN ============= */
+
+.login-btn{
+  width: 100%;
+  font-size: 20px;
+  color: black;
+  border-color: rgb(59,89,152);
+  border-radius: 50px;
+  margin-left: 15px;
+  background-color: transparent;
+  border-width: 2px;
+  /*letter-spacing: 2px;*/
+}
+
+.loginform .form-field-area .btn:hover{
+  font-size: 23px;
+  background-color: white;
+  border-color: rgb(59,89,152);
+}
+
+
+.loginform .form-field-area .btn:focus{
+  outline: 0;
+}

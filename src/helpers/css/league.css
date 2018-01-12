@@ -1,0 +1,52 @@
+/* ====================================== */
+/* ============= LEAGUE CSS ============= */
+/* ====================================== */
+
+/* ============= HEADER ============= */
+
+.league-header{
+  height: 400px;
+  background-color: #2996cc;
+}
+
+.header-item{
+  margin-top: 40px;
+  padding: 0px 30px;
+  color: white;
+}
+
+.header-image{
+  padding-right: 0px;
+}
+
+.header-item p{
+  letter-spacing: 2px;
+}
+
+.league-photo{
+  height: 399px;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.l-photo{
+  min-width: 100%;
+  height: inherit;
+  object-fit: cover;
+}
+
+.league-register-btn{
+  display: inline-block;
+  border-radius: 3px;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
+  background-color: #266489;
+  width: 250px;
+  padding: 15px 0;
+}
