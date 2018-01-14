@@ -40,64 +40,6 @@ div, span, body, label, h1, h2, h3, h4 {
 }
 
 
-/*.navbar-default{
-  background-color: transparent;
-  border-color: transparent;
-}
-
-.navbar-default .navbar-nav>li>a, .navbar-default .navbar-text {
-  color: white;
-  letter-spacing: 3px;
-  font-size: 13px;
-}
-
-.navbar-default .navbar-brand {
-  color: white;
-  background-color: white;
-  letter-spacing: 2px;
-}
-
-.navbar-nav {
-  background-color: #00000054;
-  background-color: transparent;
-}
-
-.navbar{
-  z-index: 10;
-  border: none;
-}
-
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
-  color: white;
-  font-size: 14px;
-  background-color: transparent;
-  border-bottom: 2px solid white;
-}
-
-.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
-    color: white;
-    font-size: 14px;
-    background-color: transparent;
-}
-
-.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
-    background-color: white;
-}
-
-.nav>li>a {
-  text-align: center;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-@media (min-width: 768px){
-  .navbar-nav>li {
-    float: left;
-    min-width: 100px;
-  }
-}*/
-
-
 /* ============= APP CONTENT ============= */
 
 .app-content{
@@ -105,8 +47,20 @@ div, span, body, label, h1, h2, h3, h4 {
 }
 
 
+/* ========================================= */
+/* ============= MEDIA QUERIES ============= */
+/* ========================================= */
 
-
+@media only screen and (max-width : 767px) {
+  .navbar .container{
+    position: absolute;
+    width: 100%;
+  }
+  .navbar-nav{
+    margin: 0px -15px;
+    background-color: white;
+  }
+}
 
 
 

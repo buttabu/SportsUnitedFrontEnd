@@ -16,7 +16,7 @@
 
 .team-photo .t-photo{
   -webkit-transform: scale(1.3);
- transform:scale(1.3);
+  transform:scale(1.3);
   -ms-transform:scale(1.3);  /*IE 9*/
   -moz-transform:scale(1.3); /*Firefox*/
   -webkit-transform:scale(1.3); /*Safari and Chrome*/

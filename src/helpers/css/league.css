@@ -24,9 +24,7 @@
 }
 
 .league-photo{
-  height: 399px;
-  width: 100%;
-  object-fit: cover;
+  height: 400px;
   overflow: hidden;
 }
 
@@ -50,3 +48,13 @@
   width: 250px;
   padding: 15px 0;
 }
+
+
+/* ============= ABU CSS ============= */
+
+
+
+
+
+
+
