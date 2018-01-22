@@ -11,6 +11,9 @@ class Account extends Component {
   }
 
   render() {
+    console.log("\n === > PROPS IN ACCOUNT", this.props);
+    const { auth } = this.props;
+
     return (
       <div className="account">
         <Helmet title="Account" />
@@ -22,11 +25,11 @@ class Account extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
   actions: bindActionCreators({}, dispatch)
 });
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   auth: state.auth
 });
 

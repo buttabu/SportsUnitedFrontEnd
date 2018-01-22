@@ -44,8 +44,10 @@ class Home extends Component {
             <span className="sporta-btn">REGISTER WITH SPORTA</span>
           </Link>
         </div>
-
-        <LoginForm outerClassName={"col-xs-12 col-sm-6 col-md-4 col-lg-4"} {...this.props.actions} />
+        
+        {this.props.auth.isLogedOut &&
+          <LoginForm outerClassName={"col-xs-12 col-sm-6 col-md-4 col-lg-4"} {...this.props.actions} />
+        }
 
       </div>
     );

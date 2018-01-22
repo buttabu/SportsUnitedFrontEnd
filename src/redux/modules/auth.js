@@ -28,6 +28,8 @@ export default function reducer(state = initialState, action = {}) {
       return Object.assign({}, state, {
         isFetching: false,
         isLoaded: true,
+        isLogedIn: true,
+        isLogedOut: false,
         //accessToken: action.result.accessToken,
         user: action.result.user
       });
@@ -80,9 +82,10 @@ export default function reducer(state = initialState, action = {}) {
       return Object.assign({}, state, {
         isFetching: false,
         isLoaded: true,
-        user: action.result,
-        isLogedIn: true,
-        isLogedOut: false
+        // user: action.result,
+        user: null // IF USER IS REGISTERED HE MUST CONFIRM EMAIL BEFORE HAVING ACCESS TO ACCOUNT
+        // isLogedIn: true,
+        // isLogedOut: false
       });
     case REGISTER_USER_FAILURE:
       console.log('\nREGISTER_USER_FAILURE', action);
@@ -130,5 +133,5 @@ export default function reducer(state = initialState, action = {}) {
 // =====================================
 
 export function isLoaded(globalState) {
-  return globalState.auth && globalState.auth.loaded;
+  return globalState.auth && globalState.auth.isLogedIn;
 }

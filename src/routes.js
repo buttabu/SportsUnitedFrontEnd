@@ -62,7 +62,9 @@ export default (store) => {
       <Route path="teams" component={Team} />
       <Route path="teams/profile/:teamProfile" component={TeamProfile} />
       <Route path="athletes" component={Athlete} />
+
       <Route path="register" component={Register} />
+      <Route path="register/confirmation/:token" component={Register} />
 
       {/* Catch all route */}
       <Route path="*" component={NotFound} status={404} />

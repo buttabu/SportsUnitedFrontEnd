@@ -12,7 +12,7 @@ class LoginForm extends Component{
   handleSubmit = (values) =>{
     //values.preventDefault()
     this.props.resetForm();
-    //this.props.login(values);
+    this.props.login(values);
     console.log("LOGINFORM VALUES:", values);
   }
 
