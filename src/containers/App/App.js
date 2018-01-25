@@ -25,21 +25,25 @@ import '../../helpers/css/register.css';
 @asyncConnect([{
   promise: ({ store: { dispatch, getState } }) => {
     const promises = [];
-    // if (!isAuthLoaded(getState())) {
-    //   promises.push(dispatch(loadAuth()));
-    // }
+    if (!isAuthLoaded(getState())) {
+      promises.push(dispatch(loadAuth()));
+    }
     return Promise.all(promises);
   }
 }])
+
 @connect(
-  state => ({
-    user: state.auth.user
+  (state, ownProps) => ({
+    auth: state.auth,
+    params: ownProps.params,
+    location: ownProps.location
   }),
   { logout, pushState: push })
+
 export default class App extends Component {
   static propTypes = {
     children: PropTypes.object.isRequired,
-    user: PropTypes.object,
+    auth: PropTypes.object,
     logout: PropTypes.func.isRequired,
     pushState: PropTypes.func.isRequired
   };
@@ -49,14 +53,14 @@ export default class App extends Component {
   };
 
   componentWillReceiveProps(nextProps) {
-    console.log('\n\n ==== Apps NEXTPROPS: ', nextProps);
-    if (!this.props.user && nextProps.user) {
-      if (nextProps.user.is_active || nextProps.user.username){ 
+    console.log('\n\n ====> App.js NEXTPROPS: ', nextProps);
+    if (!this.props.auth.user && nextProps.auth.user) {
+      if (nextProps.auth.user.is_active || nextProps.auth.user.username){ 
         console.log(" -=-=-=-=- USER CONFIRMED EMAIL OR LOGGING IN -=-=-=-=- ");
         this.props.pushState('/account');
       }
     } 
-    else if (this.props.user && !nextProps.user) {
+    else if (this.props.auth.user && !nextProps.auth.user) {
       // logout
       this.props.pushState('/');
     }
@@ -68,8 +72,8 @@ export default class App extends Component {
   };
 
   render() {
-    console.log('\n\n ==== Apps PROPS: ', this.props);
-    const { user } = this.props;
+    console.log('\n\n ====> App.js PROPS: ', this.props);
+    const { user } = this.props.auth;
     const styles = require('./App.scss');
 
     return (

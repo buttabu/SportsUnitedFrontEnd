@@ -31,7 +31,7 @@ export default function reducer(state = initialState, action = {}) {
         isLogedIn: true,
         isLogedOut: false,
         //accessToken: action.result.accessToken,
-        user: action.result.user
+        user: action.result
       });
     case LOAD_USER_FAILURE:
       console.log('\nLOAD_USER_FAILURE', action);
@@ -135,3 +135,4 @@ export default function reducer(state = initialState, action = {}) {
 export function isLoaded(globalState) {
   return globalState.auth && globalState.auth.isLogedIn;
 }
+

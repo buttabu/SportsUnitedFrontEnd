@@ -4,10 +4,15 @@ import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { AccountPage } from 'components';
+import { load } from '../../actions/Auth/actions';
 
 class Account extends Component {
   constructor(props) {
     super(props);
+  }
+
+  componentWillMount(){
+    this.props.actions.load()
   }
 
   render() {
@@ -26,7 +31,7 @@ class Account extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  actions: bindActionCreators({}, dispatch)
+  actions: bindActionCreators({load}, dispatch)
 });
 
 const mapStateToProps = (state) => ({

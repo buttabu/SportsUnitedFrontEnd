@@ -60,6 +60,29 @@ export function login(body) {
   };
 }
 
+
+export function loginSaveUser(body, flag){
+ return function(dispatch) {
+    switch(flag) {
+      case 'login':
+        dispatch(login(body))
+          .then((res) => {
+            console.log("\nACTIONS RES LOGINSAVEUSER", res);
+            typeof localStorage !== 'undefined' ? localStorage.setItem('id_token', res.token) : '';
+            console.log("\n ACTIONS LOCALSTORAGE", localStorage);
+         });
+        break;
+      default:
+        break;
+    };
+  }
+}
+
+
+
+
+
+
 // ===========================================
 // ============== LOGOUT ACTION ==============
 // ===========================================

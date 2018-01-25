@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { HomePage, LoginForm } from 'components';
-import { login } from '../../actions/Auth/actions';
+import { load, loginSaveUser } from '../../actions/Auth/actions';
 
 class Home extends Component {
   constructor(props) {
@@ -15,6 +15,12 @@ class Home extends Component {
       width: 0,
     }
     this.updateDimensions = this.updateDimensions.bind(this);
+  }
+
+  componentWillMount(){
+    if(this.props.auth.isLogedOut){
+      this.props.actions.load();
+    }
   }
 
   updateDimensions = () => {
@@ -55,7 +61,7 @@ class Home extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  actions: bindActionCreators({ login }, dispatch)
+  actions: bindActionCreators({ loginSaveUser, load }, dispatch)
 });
 
 const mapStateToProps = (state) => ({
