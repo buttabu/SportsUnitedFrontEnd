@@ -12,7 +12,7 @@ import config from 'config';
 import { asyncConnect } from 'redux-connect';
 
 import { isLoaded as isAuthLoaded } from 'redux/modules/auth';
-import { load as loadAuth, logout } from '../../actions/Auth/actions';
+import { load as loadAuth, logoutRemoveUser as logout } from '../../actions/Auth/actions';
 
 import '../../helpers/app.css';
 import '../../helpers/css/home.css';
@@ -54,12 +54,18 @@ export default class App extends Component {
 
   componentWillReceiveProps(nextProps) {
     console.log('\n\n ====> App.js NEXTPROPS: ', nextProps);
+    const isLoggingIn = nextProps.auth.user ? (nextProps.auth.user.request_login && !nextProps.auth.user.request_load) : false;
+    const isLoading = nextProps.auth.user ? (!nextProps.auth.user.request_login && nextProps.auth.user.request_load): false;
+
     if (!this.props.auth.user && nextProps.auth.user) {
-      if (nextProps.auth.user.is_active || nextProps.auth.user.username){ 
-        console.log(" -=-=-=-=- USER CONFIRMED EMAIL OR LOGGING IN -=-=-=-=- ");
-        this.props.pushState('/account');
+      if (isLoggingIn){
+        console.log(" -=-=-=-=- LOGGING IN -=-=-=-=- ");
+        this.props.pushState('/account'); 
       }
-    } 
+      else if (isLoading){
+        console.log(" -=-=-=-=- LOADING DETAILS -=-=-=-=- ");
+      }
+    }
     else if (this.props.auth.user && !nextProps.auth.user) {
       // logout
       this.props.pushState('/');

@@ -35,11 +35,11 @@ export default class ApiClient {
 
         // NEW
         if (typeof localStorage !== 'undefined') {
-          console.log("\n *LOCALSTORAGE APICLIENT", localStorage);
-          console.log("\n *AUTHENTICATED", authenticated);
+          // console.log("\n *LOCALSTORAGE APICLIENT", localStorage);
+          // console.log("\n *AUTHENTICATED", authenticated);
           if(authenticated) {
             let token = localStorage.getItem('id_token') || null;
-            console.log("\n *TOKEN", token);
+            // console.log("\n *TOKEN", token);
             if(token) {
               request.set('Authorization', `JWT ${token}`);
             }
@@ -66,8 +66,8 @@ export default class ApiClient {
           request.send(data);
         }
 
-        console.log("requestrequestrequest");
-        console.log(request);
+        // console.log("requestrequestrequest");
+        // console.log(request);
 
         // request.end((err, { body } = {}) => (err ? reject(body || err) : resolve(body)));
         request.end((err, { body } = {}) => {
@@ -75,8 +75,8 @@ export default class ApiClient {
             reject(body || err);
           } 
           else if (body && typeof body.key !== 'undefined'){
-            console.log("request.end body", body);
-            console.log("request.end body.key", body.key);
+            // console.log("request.end body", body);
+            // console.log("request.end body.key", body.key);
             typeof localStorage !== 'undefined' ? localStorage.setItem('id_token', body.key) : '';
           }
           resolve(body);

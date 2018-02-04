@@ -7,7 +7,7 @@ export default class AccountPage extends Component {
   }
 
   render() {
-    console.log("ACCOUNT PAGE PROPS", this.props);
+    // console.log("ACCOUNT PAGE PROPS", this.props);
     return (
       <div className="account-page">
         account-page

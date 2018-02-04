@@ -12,11 +12,14 @@ class Account extends Component {
   }
 
   componentWillMount(){
-    this.props.actions.load()
+    // If the user has loaded from the server no need to send request anymore
+    if (!this.props.auth.isLoaded){
+      this.props.actions.load()  
+    }
   }
 
   render() {
-    console.log("\n === > PROPS IN ACCOUNT", this.props);
+    // console.log("\n === > PROPS IN ACCOUNT", this.props);
     const { auth } = this.props;
 
     return (

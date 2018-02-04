@@ -1,4 +1,5 @@
 export App from './App/App';
+export RequireLogin from './RequireLogin/RequireLogin';
 export Home from './Home/Home';
 export NotFound from './NotFound/NotFound';
 export Register from './Register/Register';

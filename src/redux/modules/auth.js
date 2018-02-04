@@ -37,7 +37,7 @@ export default function reducer(state = initialState, action = {}) {
       console.log('\nLOAD_USER_FAILURE', action);
       return Object.assign({}, state, {
         isFetching: false,
-        isLoaded: true,
+        isLoaded: false,
         error: action.error
       });
 
@@ -64,7 +64,7 @@ export default function reducer(state = initialState, action = {}) {
       console.log('\nLOGIN_USER_FAILURE', action);
       return Object.assign({}, state, {
         isFetching: false,
-        isLoaded: true,
+        isLoaded: false,
         error: action.error//result[0].error
       }); 
     // ======================================
@@ -91,7 +91,7 @@ export default function reducer(state = initialState, action = {}) {
       console.log('\nREGISTER_USER_FAILURE', action);
       return Object.assign({}, state, {
         isFetching: false,
-        isLoaded: true,
+        isLoaded: false,
         error: action.error
       });
 
@@ -109,7 +109,7 @@ export default function reducer(state = initialState, action = {}) {
       console.log('\nLOGOUT_USER_SUCCESS', action);
       return Object.assign({}, state, {
         isFetching: false,
-        isLoaded: true,
+        isLoaded: false,
         //accessToken: null,
         user: null,
         isLogedIn: false,
@@ -119,7 +119,7 @@ export default function reducer(state = initialState, action = {}) {
       console.log('\nLOGOUT_USER_FAILURE', action);
       return Object.assign({}, state, {
         isFetching: false,
-        isLoaded: true,
+        isLoaded: false,
         error: action.error
       });
 
@@ -133,6 +133,6 @@ export default function reducer(state = initialState, action = {}) {
 // =====================================
 
 export function isLoaded(globalState) {
-  return globalState.auth && globalState.auth.isLogedIn;
+  return globalState.auth && globalState.auth.isLoaded;
 }
 

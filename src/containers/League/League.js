@@ -5,10 +5,17 @@ import { bindActionCreators } from 'redux';
 import { LeagueList } from 'components';
 import { Photo } from 'components';
 import { Link } from 'react-router';
+import { load } from '../../actions/Auth/actions';
 
 class League extends Component {
   constructor(props) {
     super(props);
+  }
+
+  componentDidMount(){
+    if(this.props.auth.isLogedOut){
+      this.props.actions.load()
+    }
   }
 
   render() {
@@ -35,9 +42,9 @@ class League extends Component {
 
           </div>
 
-          <div className="col-md-8">
+          {/*<div className="col-md-8">
             <LeagueList />
-          </div>
+          </div> */}
 
       </div>
     );
@@ -45,10 +52,11 @@ class League extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  actions: bindActionCreators({ }, dispatch)
+  actions: bindActionCreators({ load }, dispatch)
 });
 
 const mapStateToProps = (state) => ({
+  auth: state.auth
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(League);
