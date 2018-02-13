@@ -13,6 +13,7 @@ class Register extends Component {
   componentDidMount(){
     if (this.props.params.token){
       // This means user has clicked on the confimation link on sent to his email.
+      console.log("\n\n\nVERFY EMAIL ACTION");
       this.props.actions.verifyEmail(this.props.params.token);
     }
   }

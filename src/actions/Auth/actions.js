@@ -27,7 +27,6 @@ export function verifyEmail(token){
     // types: [VERIFY_EMAIL_REQUEST, VERIFY_EMAIL_SUCCESS, VERIFY_EMAIL_FAILURE],
     types: [LOAD_USER_REQUEST, LOAD_USER_SUCCESS, LOAD_USER_FAILURE],
     promise: client => client.post(`api/sporta/accounts/verify-email/?token=${token}`, {
-        authenticated: true,
     })
   }; 
 }

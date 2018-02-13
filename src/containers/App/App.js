@@ -65,6 +65,10 @@ export default class App extends Component {
       else if (isLoading){
         console.log(" -=-=-=-=- LOADING DETAILS -=-=-=-=- ");
       }
+      else if (nextProps.auth.user.new_register){
+        console.log(" -=-=-=-=- NEWLY REGISTERED -=-=-=-=- ");
+        this.props.pushState('/account');  
+      }
     }
     else if (this.props.auth.user && !nextProps.auth.user) {
       // logout
