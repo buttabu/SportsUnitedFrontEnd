@@ -17,4 +17,6 @@ export AthleteCard from './AthleteCard/AthleteCard';
 export Photo from './Photo/Photo';
 export AccountPage from './AccountPage/AccountPage';
 export RegisterForm from './RegisterForm/RegisterForm';
+export UserDetailsForm from './UserDetailsForm/UserDetailsForm';
+export Loader from './Loader/Loader';
 

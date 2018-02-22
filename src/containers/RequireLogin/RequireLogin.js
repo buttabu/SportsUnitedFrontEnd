@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { browserHistory } from 'react-router';
 import { setRedirectUrl } from '../../actions/Auth/actions';
+import { load } from '../../actions/Auth/actions';
 
 class RequireLogin extends React.Component {
   componentDidMount() {
@@ -11,22 +12,24 @@ class RequireLogin extends React.Component {
       // set the current url/path for future redirection
       // then redirect (we use a React Router method)
       dispatch(setRedirectUrl(currentURL));
-      browserHistory.replace("/")
+      dispatch(load()) // LOAD USER, user is null on refresh, 
+      //browserHistory.replace(`/${currentURL}`);
     }
-    // else { 
-    //   dispatch(setRedirectUrl(currentURL));
-    //   browserHistory.replace("/account")
-    //   }
+    else{
+      console.log("\n\n YOU REFRESHED USER WAS LOGGED IN")
+      if (auth.user.credential===null) { 
+        dispatch(setRedirectUrl(currentURL));
+        browserHistory.replace("/account")
+      }
     }
+  }
 
   render() {
-    console.log("PROPS IN REQUIRELOGIN", this.props)
     const { auth } = this.props;
     
     if (auth.isLogedIn) {
       return this.props.children
     } else {
-      console.log("RENDER ELSE RequireLogin")
       return null
     }
   }
@@ -36,10 +39,6 @@ class RequireLogin extends React.Component {
 function mapStateToProps(state, ownProps) {
   return {
     auth: state.auth,
-    // isAuthenticated: state.auth.isAuthenticated,
-    // isVerified: state.auth.isVerified,
-    // basicRegistration: state.auth.basicRegistration,
-    // isCompliant: state.auth.isCompliant,
     currentURL: ownProps.location.pathname
   }
 }

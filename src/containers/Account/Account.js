@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { AccountPage } from 'components';
 import { load } from '../../actions/Auth/actions';
+import { UserDetails } from 'containers';
 
 class Account extends Component {
   constructor(props) {
@@ -21,13 +22,12 @@ class Account extends Component {
   render() {
     // console.log("\n === > PROPS IN ACCOUNT", this.props);
     const { auth } = this.props;
+    const user = auth.user;
 
     return (
       <div className="account">
-        <Helmet title="Account" />
-
-        <AccountPage auth={auth}/>
-        
+        <Helmet title="Account"/>
+        {user.credential ? (<AccountPage auth={auth}/>) : <UserDetails /> }
       </div>
     );
   }

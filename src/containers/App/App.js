@@ -21,6 +21,7 @@ import '../../helpers/css/athlete.css';
 import '../../helpers/css/team.css';
 import '../../helpers/css/login.css';
 import '../../helpers/css/register.css';
+import '../../helpers/css/loader.css';
 
 @asyncConnect([{
   promise: ({ store: { dispatch, getState } }) => {
@@ -53,7 +54,7 @@ export default class App extends Component {
   };
 
   componentWillReceiveProps(nextProps) {
-    console.log('\n\n ====> App.js NEXTPROPS: ', nextProps);
+    console.log("====> App.js NEXTPROPS: ", nextProps);
     const isLoggingIn = nextProps.auth.user ? (nextProps.auth.user.request_login && !nextProps.auth.user.request_load) : false;
     const isLoading = nextProps.auth.user ? (!nextProps.auth.user.request_login && nextProps.auth.user.request_load): false;
 
@@ -63,7 +64,7 @@ export default class App extends Component {
         this.props.pushState('/account'); 
       }
       else if (isLoading){
-        console.log(" -=-=-=-=- LOADING DETAILS -=-=-=-=- ");
+        console.log(" -=-=-=-=- LOADING USER DETAILS -=-=-=-=- ");
       }
       else if (nextProps.auth.user.new_register){
         console.log(" -=-=-=-=- NEWLY REGISTERED -=-=-=-=- ");
@@ -82,7 +83,7 @@ export default class App extends Component {
   };
 
   render() {
-    console.log('\n\n ====> App.js PROPS: ', this.props);
+    console.log("====> App.js PROPS: ", this.props);
     const { user } = this.props.auth;
     const styles = require('./App.scss');
 

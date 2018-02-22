@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { HomePage, LoginForm } from 'components';
+import { HomePage, LoginForm, Loader } from 'components';
 import { load, loginSaveUser } from '../../actions/Auth/actions';
 
 class Home extends Component {
@@ -39,20 +39,24 @@ class Home extends Component {
   }
 
   render() {
+    // console.log("PROPS IN HOME", this.props);
     return (
       <div className="home">
         <Helmet title="Home" />
         
         <HomePage height={this.state.height} width={this.state.width}/>
 
-        <div className="register-sporta">
-          <Link to="/register">
-            <span className="sporta-btn">REGISTER WITH SPORTA</span>
-          </Link>
-        </div>
-        
         {this.props.auth.isLogedOut &&
-          <LoginForm outerClassName={"col-xs-12 col-sm-6 col-md-4 col-lg-4"} {...this.props.actions} />
+          <div>
+            <div className="register-sporta">
+              <Link to="/register">
+                <span className="sporta-btn">REGISTER WITH SPORTA</span>
+              </Link>
+            </div>
+            {this.props.auth.isFetching ? <Loader className="col-xs-12 col-sm-6 col-md-4 col-lg-4"/> :
+              <LoginForm outerClassName={"col-xs-12 col-sm-6 col-md-4 col-lg-4"} serverError={this.props.auth.error} {...this.props.actions} />
+            }
+          </div>
         }
 
       </div>
@@ -70,8 +74,7 @@ const mapStateToProps = (state) => ({
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
 
-
-
+            
 
 
 
