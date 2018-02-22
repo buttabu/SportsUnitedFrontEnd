@@ -19,4 +19,6 @@ export AccountPage from './AccountPage/AccountPage';
 export RegisterForm from './RegisterForm/RegisterForm';
 export UserDetailsForm from './UserDetailsForm/UserDetailsForm';
 export Loader from './Loader/Loader';
+export LeagueFilter from './LeagueFilter/LeagueFilter';
+export LeagueCheckbox from './LeagueCheckbox/LeagueCheckbox';
 

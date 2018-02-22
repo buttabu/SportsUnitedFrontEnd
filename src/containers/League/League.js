@@ -6,6 +6,7 @@ import { LeagueList } from 'components';
 import { Photo } from 'components';
 import { Link } from 'react-router';
 import { load } from '../../actions/Auth/actions';
+import { LeagueFilter } from 'components';
 
 class League extends Component {
   constructor(props) {
@@ -40,6 +41,13 @@ class League extends Component {
               <Photo className="league-photo" photoClassName="l-photo" src={tempIMG} parentsHeight={""} />
             </div>
 
+          </div>
+          <div className="top-header">
+            <h1>Top Leagues in <span className="top-header-name">Sporta!!!</span></h1>
+          </div>
+
+          <div className="col-md-3 col-lg-3">
+            <LeagueFilter />
           </div>
 
           {/*<div className="col-md-8">
