@@ -1,10 +1,10 @@
 /* ====================================== */
-/* ============= LEAGUE CSS ============= */
+/* ============= EXPLORE CSS ============= */
 /* ====================================== */
 
 /* ============= HEADER ============= */
 
-.league-header{
+.explore-header{
   height: 400px;
   background-color: #2996cc;
 }
@@ -23,18 +23,18 @@
   letter-spacing: 2px;
 }
 
-.league-photo{
+.explore-photo{
   height: 400px;
   overflow: hidden;
 }
 
-.l-photo{
+.e-photo{
   min-width: 100%;
   height: inherit;
   object-fit: cover;
 }
 
-.league-register-btn{
+.explore-register-btn{
   display: inline-block;
   border-radius: 3px;
   border: none;

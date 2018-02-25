@@ -16,7 +16,7 @@ import { load as loadAuth, logoutRemoveUser as logout } from '../../actions/Auth
 
 import '../../helpers/app.css';
 import '../../helpers/css/home.css';
-import '../../helpers/css/league.css';
+import '../../helpers/css/explore.css';
 import '../../helpers/css/athlete.css';
 import '../../helpers/css/team.css';
 import '../../helpers/css/login.css';
@@ -104,16 +104,8 @@ export default class App extends Component {
            <Navbar.Collapse>
             <Nav navbar>
 
-              <LinkContainer to="/leagues">
-                <NavItem>Leagues</NavItem>
-              </LinkContainer>
-
-              <LinkContainer to="/teams">
-                <NavItem>Teams</NavItem>
-              </LinkContainer>
-
-              <LinkContainer to="/athletes">
-                <NavItem>Athletes</NavItem>
+              <LinkContainer to="/explore">
+                <NavItem>Explore</NavItem>
               </LinkContainer>
 
               {!user && (

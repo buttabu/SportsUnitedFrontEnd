@@ -9,11 +9,12 @@ import {
   NotFound,
   Register, 
   Account,
-  Athlete,
-  Team,
-  League,
+  // Athlete,
+  // Team,
+  // League,
   TeamProfile,
   LeagueProfile,
+  Explore,
 } from 'containers';
 
 export default (store) => {
@@ -26,6 +27,12 @@ export default (store) => {
       <IndexRoute component={Home} />
 
       {/* Routes */}
+
+      <Route path="explore" component={Explore} />
+      <Route path="register" component={Register} />
+      <Route path="register/confirmation/:token" component={Register} />
+
+      {/*
       <Route path="athletes" component={Athlete} />
 
       <Route path="leagues" component={League} />
@@ -33,11 +40,8 @@ export default (store) => {
       
       <Route path="teams" component={Team} />
       <Route path="teams/profile/:teamProfile" component={TeamProfile} />
-      
+      */}
 
-      <Route path="register" component={Register} />
-      <Route path="register/confirmation/:token" component={Register} />
-      
       <Route component={RequireLogin}>
         <Route path="account" component={Account} />
       </Route>
