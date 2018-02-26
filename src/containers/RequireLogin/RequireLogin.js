@@ -16,7 +16,6 @@ class RequireLogin extends React.Component {
       //browserHistory.replace(`/${currentURL}`);
     }
     else{
-      console.log("\n\n YOU REFRESHED USER WAS LOGGED IN")
       if (auth.user.credential===null) { 
         dispatch(setRedirectUrl(currentURL));
         browserHistory.replace("/account")

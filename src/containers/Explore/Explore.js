@@ -2,11 +2,9 @@ import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { LeagueList } from 'components';
-import { Photo } from 'components';
 import { Link } from 'react-router';
 import { load } from '../../actions/Auth/actions';
-import { LeagueFilter, Loader } from 'components';
+import { Photo, LeagueFilter, Loader, LeagueList } from 'components';
 
 class Explore extends Component {
   constructor(props) {
@@ -21,7 +19,7 @@ class Explore extends Component {
 
   render() {
     const tempIMG = "https://static1.squarespace.com/static/55ea2481e4b0902fc052322c/55edff23e4b05e517b4fca88/55edffa9e4b03d3d6e7aa499/1441660857702/ENZ_4585-2.jpg?format=1500w";
-    console.log("\n\nPROPS IN EXPLORE", this.props);
+
     const renderExplore = () => {
       return(
         <div>

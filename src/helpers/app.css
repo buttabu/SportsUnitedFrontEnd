@@ -26,7 +26,7 @@
 /* ============= APP CSS ============= */
 /* =================================== */
 
-div, span, body, label, h1, h2, h3, h4 {
+div, span, body, label, h1, h2, h3, h4, a {
   font-family: "OpenSans-Light";
 }
 
@@ -62,8 +62,11 @@ div, span, body, label, h1, h2, h3, h4 {
   }
 }
 
-
-
+@media (min-width: 768px){
+  .navbar {
+    border-radius: 0px; 
+  }
+}
 
 
 

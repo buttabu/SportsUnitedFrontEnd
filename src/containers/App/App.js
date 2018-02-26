@@ -22,6 +22,7 @@ import '../../helpers/css/team.css';
 import '../../helpers/css/login.css';
 import '../../helpers/css/register.css';
 import '../../helpers/css/loader.css';
+import '../../helpers/css/account.css';
 
 @asyncConnect([{
   promise: ({ store: { dispatch, getState } }) => {
