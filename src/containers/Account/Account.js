@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { AccountPage } from 'components';
+import { AccountPage, AdvanceSettings } from 'components';
 import { load } from '../../actions/Auth/actions';
 import { UserDetails } from 'containers';
 
@@ -26,7 +26,7 @@ class Account extends Component {
 
     const renderCredential = () => {
       const credential = auth.user.credential; 
-      const cred = credential==="A" ? "Athlete" : (credential === "T" ? "Team Captain" : (credential === "L" ? "League Organizer" : "Admin") )
+      const cred = credential ==="A" ? "Athlete" : (credential === "T" ? "Team Captain" : (credential === "L" ? "League Organizer" : "Admin") )
       return(
         <span>{cred}</span>
       )
@@ -34,10 +34,9 @@ class Account extends Component {
 
     const renderProfileCard = () => {
       return(
-        <div className="col-sm-12 col-md-12 pop-genie profile-card">
+        <div className="pop-genie profile-card">
           <div className="temp-bar">
-            <div className="temp-circle">
-            </div>
+            <div className="temp-circle"></div>
           </div>
           
           <div className="col-sm-12 col-md-12 profile-card-details">
@@ -47,18 +46,18 @@ class Account extends Component {
           </div>
           
           <div className="col-sm-12 col-md-12 profile-card-status">
-            <div className="col-sm-6 col-md-6">
+            <div className="col-sm-6 col-md-6 padding-zero">
               <span className="text-muted">status</span>            
             </div>
-            <div className="col-sm-6 col-md-6">
+            <div className="col-sm-6 col-md-6 padding-zero">
               <span className="text-success">playing</span>            
             </div>
             
-            <div className="col-sm-6 col-md-6">
+            <div className="col-sm-6 col-md-6 padding-zero">
               <span className="text-muted">sport</span>
             </div>
 
-            <div className="col-sm-6 col-md-6">
+            <div className="col-sm-6 col-md-6 padding-zero">
               <span className="text-success">soccer</span>
             </div>
 
@@ -80,20 +79,24 @@ class Account extends Component {
       <div className="account">
         <Helmet title="Account"/>
         {user.credential ?
-          (<div className="container-fluid">
-            <div className="col-sm-2 col-md-2">
+          (<div className="container">
+            
+            <div className="hidden-xs col-sm-3 col-md-3 col-lg-2">
               {renderProfileCard()}
             </div>
             
-            <div className="col-sm-6 col-md-6">
+            <div className="col-xs-12 col-sm-8 col-md-7 col-lg-7">
               <AccountPage auth={auth}/>
             </div>
 
-            <div className="col-sm-3 col-md-3">
-              {/* SOME CONTENT HERE SUCH AS ADS, EVENTS, ETC*/}
-            </div>
 
+            <div className="hidden-xs hidden-sm col-md-2 col-lg-3">
+              <div className="pop-genie some-content">
+              </div>
+            </div>
+          
           </div>)
+
           : (<UserDetails />)
         }
       

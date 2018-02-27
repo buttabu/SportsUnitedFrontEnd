@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import { Tab } from 'semantic-ui-react'
+import { Tab } from 'semantic-ui-react';
 
 
 export default class AccountPage extends Component {
@@ -14,7 +14,7 @@ export default class AccountPage extends Component {
     const panes = [
       { menuItem: 'Home', render: () => <Tab.Pane attached={false}>Tab 1 account-page</Tab.Pane> },
       { menuItem: 'Messages', render: () => <Tab.Pane attached={false}>Tab 2 account-page</Tab.Pane> },
-      { menuItem: 'Settings', render: () => <Tab.Pane attached={false}>Tab 3 account-page</Tab.Pane> },
+      { menuItem: 'Friends', render: () => <Tab.Pane attached={false}>Tab 3 account-page</Tab.Pane> },
     ]
 
     return (

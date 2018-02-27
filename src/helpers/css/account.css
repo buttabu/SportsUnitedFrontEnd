@@ -6,6 +6,8 @@
 
 .profile-card{
   padding: 0px;
+  width: 165px;
+  height: 364px;
 }
 
 .temp-bar{
@@ -15,18 +17,18 @@
 }
 
 .temp-circle{
-  height: 70px;
+  height: 60px;
   border-radius: 57px;
-  width: 70px;
+  max-width: 60px;
   background-color: grey;
-  position: absolute;
-  left: 55px;
   top: 9px;
+  left: 54px;
   z-index: 10;
+  position: relative;
 }
 
 .profile-card-details{
-  padding-top: 44px;
+  padding-top: 36px;
   text-align: center;
   background-color: #f7f7f7;
 }
@@ -48,10 +50,26 @@
   border-bottom: 1px solid #eaeaea;
 }
 
+.some-content{
+  height: 200px;
+  background-color: papayawhip;
+}
+
+.padding-zero{
+  padding: 0px;
+}
+
+.small-circle{
+  height: 30px;
+  width: 30px;
+  background-color: gray;
+  border-radius: 57px;
+}
+
 /* ============= TOP TAB ============= */
 
 .top-tab .menu .item {
-  font-size: 14px !important;
+  font-size: 17px !important;
 }
 
 .pop-genie{
@@ -63,5 +81,4 @@
 .top-tab{
   padding: 0px 15px 15px 15px;
 }
-
 

@@ -1,0 +1,27 @@
+/* ================================================ */
+/* ============= ADVANCE SETTINGS CSS ============= */
+/* ================================================ */
+
+
+.advance-settings{
+  margin-top: 8px;
+  float: right;    
+}
+
+.settings-label{
+  display: inline-flex;
+}
+
+.advance-settings .dropdown .menu span{
+  font-size: 17px;
+}
+
+.advance-settings .dropdown .menu i.icon{
+  font-size: 14px; 
+}
+
+.advance-settings .ui.dropdown .menu>.item:hover {
+    background: #0366d6;
+    color: white;
+    z-index: 13;
+}

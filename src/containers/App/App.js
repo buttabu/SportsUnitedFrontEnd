@@ -14,6 +14,8 @@ import { asyncConnect } from 'redux-connect';
 import { isLoaded as isAuthLoaded } from 'redux/modules/auth';
 import { load as loadAuth, logoutRemoveUser as logout } from '../../actions/Auth/actions';
 
+import { AdvanceSettings } from 'components';
+
 import '../../helpers/app.css';
 import '../../helpers/css/home.css';
 import '../../helpers/css/explore.css';
@@ -23,6 +25,7 @@ import '../../helpers/css/login.css';
 import '../../helpers/css/register.css';
 import '../../helpers/css/loader.css';
 import '../../helpers/css/account.css';
+import '../../helpers/css/advance_settings.css';
 
 @asyncConnect([{
   promise: ({ store: { dispatch, getState } }) => {
@@ -115,20 +118,24 @@ export default class App extends Component {
                 </LinkContainer>
               )}
 
-              {user && (
+              {/*{user && (
                 <LinkContainer to="/logout">
                   <NavItem className="logout-link" onClick={this.handleLogout}>
                     {' '}
                     Logout{' '}
                   </NavItem>
                 </LinkContainer>
-              )}
+              )}*/}
+
               {user && (
                 <LinkContainer to="/account">
                   <NavItem>Account</NavItem>
                 </LinkContainer>
               )}
             </Nav>
+            {user && (
+              <AdvanceSettings {...this.props}/>
+            )}
           </Navbar.Collapse>
 
         </Navbar>

@@ -21,4 +21,5 @@ export UserDetailsForm from './UserDetailsForm/UserDetailsForm';
 export Loader from './Loader/Loader';
 export LeagueFilter from './LeagueFilter/LeagueFilter';
 export LeagueCheckbox from './LeagueCheckbox/LeagueCheckbox';
+export AdvanceSettings from './AdvanceSettings/AdvanceSettings';
 
