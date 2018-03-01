@@ -46,6 +46,13 @@ div, span, body, label, h1, h2, h3, h4, a {
 }
 
 
+.home-nav-tab {
+  background: url('../containers/App/home.png') no-repeat center center;
+  height: 17px;
+  width: 66px;
+}
+
+
 /* ============= APP CONTENT ============= */
 
 .app-content{

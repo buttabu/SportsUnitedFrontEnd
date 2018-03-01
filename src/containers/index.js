@@ -1,9 +1,10 @@
 export App from './App/App';
 export RequireLogin from './RequireLogin/RequireLogin';
 export Home from './Home/Home';
+export Sporta from './Sporta/Sporta';
 export NotFound from './NotFound/NotFound';
 export Register from './Register/Register';
-export Account from './Account/Account';
+// export Account from './Account/Account';
 export League from './League/League';
 export LeagueProfile from './LeagueProfile/LeagueProfile';
 export Team from './Team/Team';

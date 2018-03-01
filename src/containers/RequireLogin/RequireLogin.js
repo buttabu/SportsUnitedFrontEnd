@@ -18,7 +18,7 @@ class RequireLogin extends React.Component {
     else{
       if (auth.user.credential===null) { 
         dispatch(setRedirectUrl(currentURL));
-        browserHistory.replace("/account")
+        browserHistory.replace("/home")
       }
     }
   }

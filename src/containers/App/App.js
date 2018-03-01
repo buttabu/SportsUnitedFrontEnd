@@ -17,14 +17,14 @@ import { load as loadAuth, logoutRemoveUser as logout } from '../../actions/Auth
 import { AdvanceSettings } from 'components';
 
 import '../../helpers/app.css';
-import '../../helpers/css/home.css';
+import '../../helpers/css/sporta.css';
 import '../../helpers/css/explore.css';
 import '../../helpers/css/athlete.css';
 import '../../helpers/css/team.css';
 import '../../helpers/css/login.css';
 import '../../helpers/css/register.css';
 import '../../helpers/css/loader.css';
-import '../../helpers/css/account.css';
+import '../../helpers/css/home.css';
 import '../../helpers/css/advance_settings.css';
 
 @asyncConnect([{
@@ -65,14 +65,14 @@ export default class App extends Component {
     if (!this.props.auth.user && nextProps.auth.user) {
       if (isLoggingIn){
         console.log(" -=-=-=-=- LOGGING IN -=-=-=-=- ");
-        this.props.pushState('/account'); 
+        this.props.pushState('/home'); 
       }
       else if (isLoading){
         console.log(" -=-=-=-=- LOADING USER DETAILS -=-=-=-=- ");
       }
       else if (nextProps.auth.user.new_register){
         console.log(" -=-=-=-=- NEWLY REGISTERED -=-=-=-=- ");
-        this.props.pushState('/account');  
+        this.props.pushState('/home');  
       }
     }
     else if (this.props.auth.user && !nextProps.auth.user) {
@@ -109,7 +109,7 @@ export default class App extends Component {
             <Nav navbar>
 
               <LinkContainer to="/explore">
-                <NavItem>Explore</NavItem>
+                <NavItem className="trophy icon">Explore</NavItem>
               </LinkContainer>
 
               {!user && (
@@ -118,20 +118,18 @@ export default class App extends Component {
                 </LinkContainer>
               )}
 
-              {/*{user && (
-                <LinkContainer to="/logout">
-                  <NavItem className="logout-link" onClick={this.handleLogout}>
-                    {' '}
-                    Logout{' '}
-                  </NavItem>
-                </LinkContainer>
-              )}*/}
-
               {user && (
-                <LinkContainer to="/account">
-                  <NavItem>Account</NavItem>
+                <LinkContainer to="/home">
+                  <NavItem className="home-nav-tab">Home</NavItem>
                 </LinkContainer>
               )}
+
+              {user && user.credential === "L" && (
+                <LinkContainer to="/manage">
+                  <NavItem >Manage</NavItem>
+                </LinkContainer>
+              )}
+
             </Nav>
             {user && (
               <AdvanceSettings {...this.props}/>

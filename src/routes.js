@@ -5,10 +5,11 @@ import { load as loadAuth, logout } from 'actions/Auth/actions';
 import { 
   App, 
   RequireLogin,
-  Home, 
+  Sporta,
   NotFound,
-  Register, 
-  Account,
+  Register,
+  Home,
+  // Account,
   // Athlete,
   // Team,
   // League,
@@ -24,7 +25,7 @@ export default (store) => {
   return (
     <Route path="/" component={App}>
       {/* Home (main) route */}
-      <IndexRoute component={Home} />
+      <IndexRoute component={Sporta} />
 
       {/* Routes */}
 
@@ -43,7 +44,7 @@ export default (store) => {
       */}
 
       <Route component={RequireLogin}>
-        <Route path="account" component={Account} />
+        <Route path="home" component={Home} />
       </Route>
 
       {/* Catch all other routes */}
