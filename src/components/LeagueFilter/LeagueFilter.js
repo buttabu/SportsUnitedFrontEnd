@@ -14,17 +14,13 @@ handleChange = () => {
     athleteChecked: !this.state.athleteChecked }) 
 }
 handleFormSubmit = formSubmitEvent => {    
-       for (const checkbox of this.selectedCheckboxes) {
-         console.log(checkbox, 'is selected.');
+      formSubmitEvent.preventDefault();
+       for (const checkbox of this.selectedCheckboxes) { console.log(checkbox, 'is selected.');}
        }
-       formSubmitEvent.preventDefault();
-     }
 toggleCheckbox = label => {
       if (this.selectedCheckboxes.has(label)) {
-        this.selectedCheckboxes.delete(label);
-      } else {
-        this.selectedCheckboxes.add(label);
-      }
+          this.selectedCheckboxes.delete(label);} 
+      else { this.selectedCheckboxes.add(label); }
     }
 createCheckbox = label => ( <LeagueCheckbox label={label} handleCheckboxChange={this.toggleCheckbox} key={label} /> )
    createCheckboxes = (e) => ( e.map(this.createCheckbox) )
@@ -41,35 +37,23 @@ render() {
       const filterDefaults = [
         { title:'Individual Registeration Price', info: ['$ 100', '$ 220','$ 300', 'Other']},
       ];
+      {/* function for toggle checkboxes */} 
+      const renderCheckboxes = (values) => {
+        return(
+        <div> 
+            {values.map(value => <div key={value.title}>
+              <h4 className="filter-objs">{value.title}</h4>
+              {this.createCheckboxes(value.info)}
+             </div>)
+             }
+        </div>
+        )
+      }
 
       {/* league content */}  
-  const leagueContent = this.state.leagueChecked
-    ? 
-    <div> 
-      {filterLeagues.map(filterLeague => <div key={filterLeague.title}>
-          <h4 className="filter-objs">{filterLeague.title}</h4>
-           {this.createCheckboxes(filterLeague.info)}
-            </div>)
-              }
-        </div>
-    : <div> 
-    {filterDefaults.map(filterDefault => <div key={filterDefault.title}>
-        <h4 className="filter-objs">{filterDefault.title}</h4>
-         {this.createCheckboxes(filterDefault.info)}
-          </div>)
-            }
-     </div> ;
+  const leagueContent = this.state.leagueChecked ? <div> { renderCheckboxes(filterLeagues) } </div> : <div> { renderCheckboxes(filterDefaults) } </div> ;
      {/* team content */}  
-    const teamContent = this.state.teamChecked 
-    ? 
-    <div> 
-      {filterTeams.map(filterTeam => <div key={filterTeam.title}>
-          <h4 className="filter-objs">{filterTeam.title}</h4>
-           {this.createCheckboxes(filterTeam.info)}
-            </div>)
-              }
-        </div>
-    : null;
+  const teamContent = this.state.teamChecked  ? <div> { renderCheckboxes(filterTeams) } </div> : null;
 
   return(
   <div>
