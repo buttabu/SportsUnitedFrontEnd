@@ -8,7 +8,7 @@ export default class LeagueList extends Component {
 
   render() {
     let container = []
-    for (let i=0; i < 6; i++){
+    for (let i=0; i < 10; i++){
       container.push(<LeagueCard />)
     }
     return (
