@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { LeagueCheckbox } from 'components';
 import { Button } from 'semantic-ui-react';
-import { Link } from 'react-router';
 
 export default class LeagueFilter extends Component {
 constructor() {
@@ -9,14 +8,12 @@ constructor() {
   this.state = { leagueChecked: false, teamChecked: false, athleteChecked: false };
 }
 componentWillMount = () => {
-   this.selectedCheckboxes = new Set();
-     }
+   this.selectedCheckboxes = new Set(); }
 handleChange = () => {
   this.setState({ leagueChecked: !this.state.leagueChecked, teamChecked: !this.state.teamChecked,
     athleteChecked: !this.state.athleteChecked }) 
 }
-handleFormSubmit = formSubmitEvent => {
-       
+handleFormSubmit = formSubmitEvent => {    
        for (const checkbox of this.selectedCheckboxes) {
          console.log(checkbox, 'is selected.');
        }
