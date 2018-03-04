@@ -12,3 +12,4 @@ export TeamProfile from './TeamProfile/TeamProfile';
 export Athlete from './Athlete/Athlete';
 export UserDetails from './UserDetails/UserDetails';
 export Explore from './Explore/Explore';
+export Manage from './Manage/Manage';

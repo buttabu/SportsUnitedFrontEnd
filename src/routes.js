@@ -9,6 +9,7 @@ import {
   NotFound,
   Register,
   Home,
+  Manage,
   // Account,
   // Athlete,
   // Team,
@@ -45,6 +46,7 @@ export default (store) => {
 
       <Route component={RequireLogin}>
         <Route path="home" component={Home} />
+        <Route path="manage" component={Manage} />
       </Route>
 
       {/* Catch all other routes */}
