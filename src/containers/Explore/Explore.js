@@ -49,7 +49,11 @@ class Explore extends Component {
           <div className="col-md-3 col-lg-3">
             <LeagueFilter />
           </div>
-        </div>
+
+          {/* <div className="col-md-9 col-lg-9">
+            <LeagueList />
+          </div> */}
+          </div>
       )
     }
 
