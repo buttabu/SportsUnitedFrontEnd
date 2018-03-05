@@ -23,3 +23,6 @@ export LeagueFilter from './LeagueFilter/LeagueFilter';
 export LeagueCheckbox from './LeagueCheckbox/LeagueCheckbox';
 export AdvanceSettings from './AdvanceSettings/AdvanceSettings';
 export HomeProfileCard from './HomeProfileCard/HomeProfileCard';
+export ManagePage from './ManagePage/ManagePage';
+
+export CreateDivisionForm from './ManagePage/CreateDivisionForm';

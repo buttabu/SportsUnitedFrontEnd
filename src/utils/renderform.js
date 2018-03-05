@@ -7,9 +7,9 @@ import match from 'utils/validation';
 // ====== REDUX RENDER FORM ======
 // ===============================
 
-export const RenderInput = ({field, label, labelClassName, inputClassName, placeholder='', type='text'}) => {
+export const RenderInput = ({field, label, labelClassName, inputClassName, placeholder='', type='text', outerClassName=null}) => {
   return(
-    <div className={`form-group ${field.error && field.touched ? 'has-error' : ''}`}>
+    <div className={`${field.error && field.touched ? 'has-error' : ''} ${outerClassName ? outerClassName : ""}`}>
       <label className={labelClassName}>{label}</label>
       <div className={inputClassName}>
         <input type={type} className="form-control" name={field.name} placeholder={placeholder} {...field} />

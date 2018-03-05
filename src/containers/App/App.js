@@ -26,6 +26,8 @@ import '../../helpers/css/register.css';
 import '../../helpers/css/loader.css';
 import '../../helpers/css/home.css';
 import '../../helpers/css/advance_settings.css';
+import '../../helpers/css/manage.css';
+import '../../helpers/css/create_division.css';
 
 @asyncConnect([{
   promise: ({ store: { dispatch, getState } }) => {

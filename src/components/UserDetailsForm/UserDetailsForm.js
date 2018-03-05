@@ -3,9 +3,9 @@ import WizardFormFirstPage from './WizardFormFirstPage';
 import WizardFormSecondPage from './WizardFormSecondPage';
 import WizardFormThirdPage from './WizardFormThirdPage';
 import { hasValue } from '../../utils/utilfunctions';
-import { SubmissionError } from 'redux-form'
+import { SubmissionError } from 'redux-form';
 
-class UserDetailsForm extends Component{
+export default class UserDetailsForm extends Component{
   constructor(props) {  
     super(props);
     this.state = {
@@ -44,7 +44,6 @@ class UserDetailsForm extends Component{
   }
 }
 
-export default UserDetailsForm
 
 
 
