@@ -14,63 +14,69 @@ class CreateDivisionForm extends Component{
   constructor(props) {
     super(props);
     this.state = { 
-      selectTeam: false,
-      inviteTeam: false,
       isLoading: false, 
-      results: [],
-      value: ''
+      searchResults: [],
+      value: "",
+      selectedTeams: [],
+      selectedAthletes: [],
+      viewCurrentSelection: ""
     }
   }
 
   resetComponent = () => {
-    this.setState({ isLoading: false, results: [], value: '' })
+    this.setState({ isLoading: false, searchResults: [], value: "" })
   }
 
-  handleResultSelect = (e, { result }) => { 
-    this.setState({ value: result.title }) 
+  handleResultSelect = (e, props) => {
+    // const selected = this.state.selectedTeams;
+    // selected.push(props.result);
+    // this.setState({ selectedTeams: selected }) 
+  }
+
+  handleFocus = (e, props) => {
+    this.setState({ isLoading: false, searchResults: [], value: "" }) 
   }
 
   handleSearchChange = (e, { value }) => {
     this.setState({ isLoading: true, value })
-
+    
     setTimeout(() => {
       if (this.state.value.length < 1) return this.resetComponent()
 
       const re = new RegExp(_.escapeRegExp(this.state.value), 'i')
       const isMatch = (result) => re.test(result.title)
 
-      this.setState({ isLoading: false, results: _.filter(source, isMatch), })
+      this.setState({ isLoading: false, searchResults: _.filter(source, isMatch), })
     }, 500)
   }
 
-  toggleVisibility = (e, props) => {
-    if (props.value == 0){
-      this.setState({ selectTeam: !this.state.selectTeam });
-    }
-    else if (props.value == 1){
-      this.setState({ inviteTeam: !this.state.inviteTeam }); 
-    }
+  handleSubmit = (e, values) => {
+    // e.preventDefault();
   }
 
-  handleSubmit = (e, values) => {
-    e.preventDefault();
+  handleViewCurrentSelection = (e, selected) => {
+    this.setState({ viewCurrentSelection: selected })
+  }
+
+  handleInvited = (e, selected) => {
+    if (selected.type === "team"){
+      const temp = this.state.selectedTeams;
+      temp.push(selected);
+      this.setState({ selectedTeams: temp }) 
+    }
+    else{
+      const temp = this.state.selectedAthletes;
+      temp.push(selected);
+      this.setState({ selectedAthletes: temp }) 
+    }
+    
   }
 
   render(){
     const { fields: { divisionName }, handleSubmit, error, serverError} = this.props;
-    const { selectTeam, inviteTeam } = this.state;
-    const { isLoading, value, results } = this.state;
+    const { isLoading, value, searchResults, viewCurrentSelection, selectedTeams, selectedAthletes } = this.state;
 
     const mdsm_12 = "col-sm-12 col-md-12";
-
-
-    const renderResults = ({ title, description, season }) => [
-      <div key='content' className='content'>
-        {title && <div className='title'>{title}</div>}
-        {description && <div className='description'>{description}</div>}
-        {season && <div>{season}</div>}
-      </div>,
-    ]
 
     // ==========================
     // ====== SERVER ERROR ======
@@ -90,6 +96,23 @@ class CreateDivisionForm extends Component{
       return returnedError;
     }
 
+    // ===============================
+    // ====== DROP DOWN RESULTS ======
+    // ===============================
+
+    const renderResults = ({ title, sid, description, season, type }) => {
+      const selected = { title: title, sid: sid, description: description, season: season, type: type } 
+      return [
+        <div>
+          {title && <div className='title'>{title}</div>}
+          {description && <div className='description'>{description}</div>}
+          {season && <div>{season}</div>}
+          {type==="division" && <div className="chose-btn" onClick={(e) => this.handleViewCurrentSelection(e, selected)}>View Teams</div>}
+          {type!=="division" && <div className="chose-btn" onClick={(e) => this.handleInvited(e, selected)}>Invite</div>}
+        </div>,
+        ]
+    }
+
     // =========================
     // ====== SELECT TEAM ======
     // =========================
@@ -99,17 +122,30 @@ class CreateDivisionForm extends Component{
         <div className="col-md-12 pop-genie padding-zero">
           <div className="col-md-12 padding-15">
             <span className="text-label"> Select teams from anywhere in your league </span>
-            <Search loading={isLoading} onResultSelect={this.handleResultSelect} onSearchChange={this.handleSearchChange} results={results} value={value} resultRenderer={renderResults} {...this.props} />
+            <Search loading={isLoading} onResultSelect={this.handleResultSelect} onFocus={this.handleFocus} onSearchChange={this.handleSearchChange} results={searchResults} value={value} resultRenderer={renderResults} {...this.props} />
           </div>
 
-          
           <div className="col-md-12">
-            <Header>State</Header>
-            <pre>{JSON.stringify(this.state, null, 2)}</pre>
-            {/*
-            <Header>Options</Header>
-            <pre>{JSON.stringify(source, null, 2)}</pre>*/}
+            <span className="text-label">Currently Viewing</span>
+            {hasValue(viewCurrentSelection) && 
+              <pre>{JSON.stringify(this.state.viewCurrentSelection, null, 2)}</pre>
+            }
           </div>
+
+          <div className="col-md-12">
+            <span className="text-label">Selected Teams</span>
+            {hasValue(selectedTeams) && 
+              <pre>{JSON.stringify(this.state.selectedTeams, null, 2)}</pre>
+            }
+          </div>
+
+          <div className="col-md-12">
+            <span className="text-label">Selected Athletes</span>
+            {hasValue(selectedAthletes) && 
+              <pre>{JSON.stringify(this.state.selectedAthletes, null, 2)}</pre>
+            }
+          </div>
+
         </div>
       )
     }
@@ -123,12 +159,8 @@ class CreateDivisionForm extends Component{
         <div className="col-md-12 padding-zero">
           <div className="col-md-4 pop-genie padding-15">
             <span className="text-label">Invite new teams</span>
-            <Button content={inviteTeam ? 'Hide' : 'Show'} onClick={this.toggleVisibility} icon="add" value={1}/>
           </div>
 
-          <Transition visible={inviteTeam} animation='slide down' duration={400}>
-            <div className="col-md-12 pop-genie">INVITE TEAMS HERE</div>
-          </Transition>
         </div>
       )
     }
@@ -168,60 +200,13 @@ export default reduxForm({
 
 
 
-// const source = _.times(5, () => ({
-//   title: faker.company.companyName(),
-//   description: faker.company.catchPhrase(),
-//   image: faker.internet.avatar(),
-//   price: faker.finance.amount(0, 100, 2, '$'),
-// }))
 
-// export default class SearchExampleStandard extends Component {
-//   componentWillMount() {
-//     this.resetComponent()
-//   }
+          // <div className="col-md-12">
+          //  <Header>State</Header>
+          //  <pre>{JSON.stringify(this.state, null, 2)}</pre>
+          //   {/*
+          //   <Header>Options</Header>
+          //   <pre>{JSON.stringify(source, null, 2)}</pre>*/}
+          // </div>
 
-//   resetComponent = () => this.setState({ isLoading: false, results: [], value: '' })
 
-//   handleResultSelect = (e, { result }) => this.setState({ value: result.title })
-
-//   handleSearchChange = (e, { value }) => {
-//     this.setState({ isLoading: true, value })
-
-//     setTimeout(() => {
-//       if (this.state.value.length < 1) return this.resetComponent()
-
-//       const re = new RegExp(_.escapeRegExp(this.state.value), 'i')
-//       const isMatch = result => re.test(result.title)
-
-//       this.setState({
-//         isLoading: false,
-//         results: _.filter(source, isMatch),
-//       })
-//     }, 500)
-//   }
-
-//   render() {
-//     const { isLoading, value, results } = this.state
-
-//     return (
-//       <Grid>
-//         <Grid.Column width={8}>
-//           <Search
-//             loading={isLoading}
-//             onResultSelect={this.handleResultSelect}
-//             onSearchChange={this.handleSearchChange}
-//             results={results}
-//             value={value}
-//             {...this.props}
-//           />
-//         </Grid.Column>
-//         <Grid.Column width={8}>
-//           <Header>State</Header>
-//           <pre>{JSON.stringify(this.state, null, 2)}</pre>
-//           <Header>Options</Header>
-//           <pre>{JSON.stringify(source, null, 2)}</pre>
-//         </Grid.Column>
-//       </Grid>
-//     )
-//   }
-// }
