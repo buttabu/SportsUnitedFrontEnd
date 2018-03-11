@@ -4,80 +4,77 @@
 
 /* ============= PROFILECARD ============= */
 
-.profile-card1{
+.profile{
     padding: 0px;
-    width: 800px;
+    width: 100%;
   }
   
-  .temp-bar1{
+  .top-bar{
     height: 175px;
     background-color: #3b5998;
     position: relative;
   }
   
-  .temp-circle1{
-    height: 130px;
-    border-radius: 70px;
-    max-width: 130px;
+  .circle{
+    height: 128px;
+    width: 128px;
+    border-radius: 50%;
     background-color:grey;
-    top: 100px;
-    left: 350px;
-    z-index: 20;
+    top: 57%;
+    left: 40%;
+    z-index: 10;
     position: relative;
+    cursor: pointer;
   }
   
-  .profile-card-details1{
+  .profile-details{
     padding-top: 65px;
     text-align: center;
     background-color: #f7f7f7;
   }
   
-  .profile-card-details1 span, .profile-card-status1 span, .profile-card-views1 span{
+  .profile-details span, .profile-status span, .profile-views span{
     display: block;
     font-weight: bolder;
     margin-bottom: 2px;
   }
   
-  .profile-card-details1 span, .profile-card-views1 span{
+  .profile-details span, .profile-views span{
     font-size: 20px;
   }
-  .profile-card-details1 h3 {
+  .profile-details h3 {
    font-weight: bolder;
    font-size: 24px;   
   }
   
-  .profile-card-status1 span{
+  .profile-status span{
     font-size: 20px; 
   }
   
   
-  .profile-card-views1, .profile-card-status1{
+  .profile-views, .profile-status{
     text-align: center;
     padding-top: 10px;
   }
   
-  .profile-card-details1, .profile-card-status1, .profile-card-views1{
+  .profile-details, .profile-status, .profile-views{
     padding-bottom: 10px;
     border-bottom: 1px solid #eaeaea;
   }
   
-  .some-content1{
+  .some-content{
     height: 200px;
     background-color: papayawhip;
   }
   
-  .padding-zero1{
+  .padding-zero{
     padding: 0px;
-  }
-  
-  .small-circle1{
-    height: 100px;
-    width: 100px;
-    background-color: gray;
-    border-radius: 57px;
   }
   .edit-button {
       float: right;
+  }
+  .advertisement {
+  margin-top: 80px;
   }
   
   /* ============= TOP TAB ============= */
