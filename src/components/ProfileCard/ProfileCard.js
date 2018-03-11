@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import { NotFound } from 'containers';
 import { Card, Icon, Button, Popup, Form, Checkbox, Modal, Header } from 'semantic-ui-react'
 
 export default class ProfileCard extends Component {
