@@ -20,4 +20,6 @@ export HomeProfileCard from './HomeProfileCard/HomeProfileCard';
 export ManagePage from './ManagePage/ManagePage';
 export SportaCard from './SportaCard/SportaCard';
 
-export CreateDivisionForm from './ManagePage/CreateDivisionForm';
+//
+export CreateDivisionForm from './ManagePage/CreateDivision/CreateDivisionForm';
+export SelectTeams from './ManagePage/CreateDivision/selectTeams';

@@ -4,35 +4,88 @@ export const source = [
     sid: 1,
     description: 'the best team',
     season: 'Summer Season',
-    type: 'division'
+    type: 'division',
+    teams: [
+      {
+        title: 'the power',
+        sid: 24,
+        description: 'dision team',
+        season: 'Winter Season',
+        type: 'team'
+      },
+      {
+        title: 'nyc fc',
+        sid: 44,
+        description: 'dision team',
+        season: 'Winter Season',
+        type: 'team'
+      },
+      {
+        title: 'red bulls',
+        sid: 98,
+        description: 'dision team',
+        season: 'Winter Season',
+        type: 'team'
+      },
+      {
+        title: 'chicago fire',
+        sid: 55,
+        description: 'dision team',
+        season: 'Winter Season',
+        type: 'team'
+      },
+      {
+        title: 'barcelona',
+        sid: 32,
+        description: 'dision team',
+        season: 'Winter Season',
+        type: 'team'
+      },      
+    ]
   },
   {
     title: 'Division Premier',
     sid: 2,
     description: 'the best team',
     season: 'Summer Season',
-    type: 'division'
-  },
-  {
-    title: 'Division Bronze',
-    sid: 3,
-    description: 'the best team',
-    season: 'Summer Season',
-    type: 'division'
-  },
-  {
-    title: 'Division Coed',
-    sid: 4,
-    description: 'the best team',
-    season: 'Summer Season',
-    type: 'division'
-  },
-  {
-    title: 'Division Coed 2',
-    sid: 5,
-    description: 'the best team',
-    season: 'Summer Season',
-    type: 'division'
+    type: 'division',
+    teams: [
+      {
+        title: 'abc123',
+        sid: 59,
+        description: 'dision team',
+        season: 'Winter Season',
+        type: 'team'
+      },
+      {
+        title: 'nyc united',
+        sid: 69,
+        description: 'dision team',
+        season: 'Winter Season',
+        type: 'team'
+      },
+      {
+        title: 'best guys',
+        sid: 73,
+        description: 'dision team',
+        season: 'Winter Season',
+        type: 'team'
+      },
+      {
+        title: 'team fire',
+        sid: 91,
+        description: 'dision team',
+        season: 'Winter Season',
+        type: 'team'
+      },
+      {
+        title: 'athletic',
+        sid: 84,
+        description: 'dision team',
+        season: 'Winter Season',
+        type: 'team'
+      },      
+    ]
   },
   {
     title: 'Team Eagles',

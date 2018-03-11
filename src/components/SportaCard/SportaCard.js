@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Card, Header } from 'semantic-ui-react'
+import { Button, Card, Header } from 'semantic-ui-react';
 
 export default class SportaCard extends Component {
   constructor(props) {
@@ -9,19 +9,20 @@ export default class SportaCard extends Component {
   render() {
     const { items, handleCardPlacement } = this.props;
     // console.log("ITEMS IN SPORTA CARD", items);
+    const type = items.type;
 
-    const cardList = items.map( (item) => { 
+    const cardList = items.selection.map( (sel) => { 
       const result = (<div className="col-md-3 sporta-card">
         <div className="col-md-7 padding-zero">
-          <span className="card-label">{item.title}</span>
+          <span className="card-label">{sel.title}</span>
           
           <div className="ui two buttons">
-            {item.type === "division" &&
-              <Button basic color='green' onClick={ (e) => handleCardPlacement(e, [true, item.sid, item.type]) }>add</Button>
+            {type === "division" &&
+              <Button basic color='green' onClick={ (e) => handleCardPlacement(e, {inserted: true, obj: sel}) }>add</Button>
             }
             
-            {(item.type === "team" || item.type === "athlete") && 
-              <Button basic color='red' onClick={ (e) => handleCardPlacement(e, [false, item.sid, item.type]) }>remove</Button>
+            {(type === "team" || type === "athlete") && 
+              <Button basic color='red' onClick={ (e) => handleCardPlacement(e, {inserted: false, obj: sel}) }>remove</Button>
             }
 
           </div>

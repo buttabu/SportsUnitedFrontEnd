@@ -10,11 +10,15 @@
   display: inline-block;  
 }
 
+.division-form{
+  padding-top: 15px;
+}
+
 .chose-btn{
   display: inline-block;
   border-radius: 3px;
   border: none;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
   letter-spacing: 1px;
   font-size: 14px;
   text-align: center;
@@ -38,7 +42,7 @@
   border: 1.4px solid #b7b7b7;
   border-radius: 7px;
   padding: 10px;
-  /*margin: 0px 3px;*/
+  margin: 0px 3px;
   padding-right: 0px; /*temporary padding, will remove when we have a profile pic*/
 }
 
@@ -53,7 +57,7 @@
 
 .profile-circle{
   height: 41px;
-  background-color: black;
+  background-color: darkgray;
   border-radius: 50px;
 }
 
