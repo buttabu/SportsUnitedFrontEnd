@@ -7,13 +7,7 @@
 
 export LoginForm from './LoginForm/LoginForm';
 export SportaPage from './SportaPage/SportaPage';
-export LeagueList from './LeagueList/LeagueList';
-export LeagueCard from './LeagueCard/LeagueCard';
 export LeagueTable from './LeagueTable/LeagueTable';
-export TeamList from './TeamList/TeamList';
-export TeamCard from './TeamCard/TeamCard';
-export AthleteList from './AthleteList/AthleteList';
-export AthleteCard from './AthleteCard/AthleteCard';
 export Photo from './Photo/Photo';
 export HomePage from './HomePage/HomePage';
 export RegisterForm from './RegisterForm/RegisterForm';
@@ -24,5 +18,6 @@ export LeagueCheckbox from './LeagueCheckbox/LeagueCheckbox';
 export AdvanceSettings from './AdvanceSettings/AdvanceSettings';
 export HomeProfileCard from './HomeProfileCard/HomeProfileCard';
 export ManagePage from './ManagePage/ManagePage';
+export SportaCard from './SportaCard/SportaCard';
 
 export CreateDivisionForm from './ManagePage/CreateDivisionForm';

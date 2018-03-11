@@ -50,7 +50,7 @@ export const source = [
   },
   {
     title: 'Team Blue',
-    sid: 7,
+    sid: 77,
     description: 'the best team',
     season: 'Summer Season',
     type: 'team'

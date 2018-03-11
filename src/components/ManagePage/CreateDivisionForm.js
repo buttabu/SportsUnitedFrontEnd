@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
+import { Button, Divider, Transition, Search, Header} from 'semantic-ui-react';
+import { SportaCard } from 'components';
 import { reduxForm } from 'redux-form';
-import validate from './CreateDivisionValidation';
 import { RenderInput, RenderButton } from 'utils/renderform';
-import { Link } from 'react-router';
-import { hasValue } from '../../utils/utilfunctions';
-import { Button, Divider, Transition } from 'semantic-ui-react';
-import { Search, Header } from 'semantic-ui-react';
 import { source } from '../../utils/dummydata';
+import { hasValue } from '../../utils/utilfunctions';
+import validate from './CreateDivisionValidation';
+import { Link } from 'react-router';
 import _ from 'lodash';
 
 
@@ -19,7 +19,7 @@ class CreateDivisionForm extends Component{
       value: "",
       selectedTeams: [],
       selectedAthletes: [],
-      viewCurrentSelection: ""
+      viewCurrentSelection: []
     }
   }
 
@@ -50,26 +50,49 @@ class CreateDivisionForm extends Component{
     }, 500)
   }
 
+  handleSelected = (e, selected) => {
+    let temp = [];
+    switch(selected.type){
+      case "division":
+        temp.push(selected);
+        this.setState({ viewCurrentSelection: temp });
+        break;
+      case "team":
+        temp = this.state.selectedTeams;
+        temp.push(selected);
+        this.setState({ selectedTeams: temp }); 
+        break;
+      case "athlete":
+        temp = this.state.selectedAthletes;
+        temp.push(selected);
+        this.setState({ selectedAthletes: temp });
+        break;
+      default:
+        break;
+    }
+  }
+
+  handleCardPlacement = (e, data) => { // data = [false, 12, "athlete"]
+    console.log("DATA INFO", data );
+    if (data[0]){ // Add team from division
+      console.log("+++ADDING TEAM FROM DIVISION");
+    }
+    else { // Remove athlete or team
+      if (data[2] == "athlete"){
+        let athletes = this.state.selectedAthletes;
+        athletes = athletes.filter( (a) => a.sid !== data[1]);
+        this.setState({ selectedAthletes: athletes});
+      }
+      else{
+        let teams = this.state.selectedTeams;
+        teams = teams.filter( (t) => t.sid !== data[1]);
+        this.setState({ selectedTeams: teams}); 
+      }
+    }
+  }
+
   handleSubmit = (e, values) => {
     // e.preventDefault();
-  }
-
-  handleViewCurrentSelection = (e, selected) => {
-    this.setState({ viewCurrentSelection: selected })
-  }
-
-  handleInvited = (e, selected) => {
-    if (selected.type === "team"){
-      const temp = this.state.selectedTeams;
-      temp.push(selected);
-      this.setState({ selectedTeams: temp }) 
-    }
-    else{
-      const temp = this.state.selectedAthletes;
-      temp.push(selected);
-      this.setState({ selectedAthletes: temp }) 
-    }
-    
   }
 
   render(){
@@ -77,6 +100,12 @@ class CreateDivisionForm extends Component{
     const { isLoading, value, searchResults, viewCurrentSelection, selectedTeams, selectedAthletes } = this.state;
 
     const mdsm_12 = "col-sm-12 col-md-12";
+
+    const checkIfExistingValue = (obj, key, value) => {
+      let result = false;
+      obj.map( (item) => { if (item[key] === value) result = true });
+      return result;
+    }
 
     // ==========================
     // ====== SERVER ERROR ======
@@ -101,14 +130,25 @@ class CreateDivisionForm extends Component{
     // ===============================
 
     const renderResults = ({ title, sid, description, season, type }) => {
-      const selected = { title: title, sid: sid, description: description, season: season, type: type } 
+      const selected = { title: title, sid: sid, description: description, season: season, type: type}
+      let invited = false;
+
+      if (type === "athlete"){
+        invited = checkIfExistingValue(this.state.selectedAthletes, "sid", sid);
+      }
+      else if (type === "team"){
+        invited = checkIfExistingValue(this.state.selectedTeams, "sid", sid);
+      }
+
       return [
         <div>
           {title && <div className='title'>{title}</div>}
           {description && <div className='description'>{description}</div>}
           {season && <div>{season}</div>}
-          {type==="division" && <div className="chose-btn" onClick={(e) => this.handleViewCurrentSelection(e, selected)}>View Teams</div>}
-          {type!=="division" && <div className="chose-btn" onClick={(e) => this.handleInvited(e, selected)}>Invite</div>}
+          {type==="division" && <div className="chose-btn" onClick={(e) => this.handleSelected(e, selected)}>View Teams</div>}
+    
+          {!invited && type!=="division" && <div className="chose-btn" onClick={(e) => this.handleSelected(e, selected)}>Invite</div>}
+          
         </div>,
         ]
     }
@@ -119,47 +159,34 @@ class CreateDivisionForm extends Component{
 
     const SelectTeam = () => {
       return(
-        <div className="col-md-12 pop-genie padding-zero">
+        <div className="col-md-12 inner-pop-genie">
           <div className="col-md-12 padding-15">
-            <span className="text-label"> Select teams from anywhere in your league </span>
+            <h4>Select teams or athletes from anywhere in your league</h4>
             <Search loading={isLoading} onResultSelect={this.handleResultSelect} onFocus={this.handleFocus} onSearchChange={this.handleSearchChange} results={searchResults} value={value} resultRenderer={renderResults} {...this.props} />
           </div>
 
-          <div className="col-md-12">
-            <span className="text-label">Currently Viewing</span>
-            {hasValue(viewCurrentSelection) && 
-              <pre>{JSON.stringify(this.state.viewCurrentSelection, null, 2)}</pre>
-            }
-          </div>
+          {hasValue(viewCurrentSelection) && 
+            <div className="col-md-12">
+              <Divider />
+              <h4>Currently Viewing [ {this.state.viewCurrentSelection[0].title} ]</h4>
+            </div>
+          }
+          
+          {hasValue(selectedTeams) && 
+            <div className="col-md-12">
+              <Divider />
+              <h4>Selected Teams [{this.state.selectedTeams.length}]</h4>
+              <SportaCard items={this.state.selectedTeams} handleCardPlacement={this.handleCardPlacement}/>
+            </div>
+          }
 
-          <div className="col-md-12">
-            <span className="text-label">Selected Teams</span>
-            {hasValue(selectedTeams) && 
-              <pre>{JSON.stringify(this.state.selectedTeams, null, 2)}</pre>
-            }
-          </div>
-
-          <div className="col-md-12">
-            <span className="text-label">Selected Athletes</span>
-            {hasValue(selectedAthletes) && 
-              <pre>{JSON.stringify(this.state.selectedAthletes, null, 2)}</pre>
-            }
-          </div>
-
-        </div>
-      )
-    }
-
-    // =========================
-    // ====== INVITE TEAM ======
-    // =========================
-
-    const InviteNewTeams = () => {
-      return(
-        <div className="col-md-12 padding-zero">
-          <div className="col-md-4 pop-genie padding-15">
-            <span className="text-label">Invite new teams</span>
-          </div>
+          {hasValue(selectedAthletes) && 
+            <div className="col-md-12">
+              <Divider />
+              <h4>Selected Athletes [{this.state.selectedAthletes.length}]</h4>
+              <SportaCard items={this.state.selectedAthletes} handleCardPlacement={this.handleCardPlacement}/>
+            </div>
+          }
 
         </div>
       )
@@ -172,14 +199,14 @@ class CreateDivisionForm extends Component{
     return(
       <form className="col-md-12 pop-genie division-form" onSubmit={handleSubmit(this.handleSubmit)}>
         
-        <RenderInput field={divisionName} outerClassName={"col-sm-12 col-md-9 padding-zero pop-genie form-field"} labelClassName={mdsm_12 + " text-label"} label={"Division Name"} inputClassName={mdsm_12} />
+        <RenderInput field={divisionName} outerClassName={"col-sm-12 col-md-9 inner-pop-genie form-field"} labelClassName={mdsm_12 + " text-label"} label={"Division Name"} inputClassName={mdsm_12} />
         {error && <p className="text-danger"><strong>{error}</strong></p>}
 
         {SelectTeam()}
-        {InviteNewTeams()}
 
         <RenderButton className={mdsm_12 + " padding-zero"} buttonClassName={""} label={"Create"} />
         {handleServerError()}
+
       </form>
     )
   }
@@ -191,11 +218,6 @@ export default reduxForm({
   validate: validate,
   forceUnregisterOnUnmount: true
 })(CreateDivisionForm)
-
-
-
-
-
 
 
 

@@ -22,10 +22,48 @@
   color: #fff;
   background-color: #2996cc;
   /*background-color: #008000;*/ /*ALSO GOOD COLOR FOR BUTTONS*/
-  width: 100px;
+  width: 110px;
   padding: 3px 0px;
 }
 
 .ui.search>.results .result{
   cursor: initial;
 }
+
+
+
+/* ============= SPORTA CARD ============= */
+
+.sporta-card{
+  border: 1.4px solid #b7b7b7;
+  border-radius: 7px;
+  padding: 10px;
+  /*margin: 0px 3px;*/
+  padding-right: 0px; /*temporary padding, will remove when we have a profile pic*/
+}
+
+.card-label{
+  display: block;
+  font-weight: bolder;
+  margin-bottom: 7px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.profile-circle{
+  height: 41px;
+  background-color: black;
+  border-radius: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
