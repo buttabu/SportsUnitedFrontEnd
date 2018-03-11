@@ -60,6 +60,7 @@ render() {
    
      <h1><strong>Search</strong></h1> 
      
+     
      <div>
       <h4 className="filter-objs">Category</h4>
        <br />        

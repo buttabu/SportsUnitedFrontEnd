@@ -1,0 +1,111 @@
+/* ===================================== */
+/* ============= HOME CSS ============= */
+/* ===================================== */
+
+/* ============= PROFILECARD ============= */
+
+.profile-card1{
+    padding: 0px;
+    width: 800px;
+  }
+  
+  .temp-bar1{
+    height: 175px;
+    background-color: #3b5998;
+    position: relative;
+  }
+  
+  .temp-circle1{
+    height: 130px;
+    border-radius: 70px;
+    max-width: 130px;
+    background-color:grey;
+    top: 100px;
+    left: 350px;
+    z-index: 20;
+    position: relative;
+  }
+  
+  .profile-card-details1{
+    padding-top: 65px;
+    text-align: center;
+    background-color: #f7f7f7;
+  }
+  
+  .profile-card-details1 span, .profile-card-status1 span, .profile-card-views1 span{
+    display: block;
+    font-weight: bolder;
+    margin-bottom: 2px;
+  }
+  
+  .profile-card-details1 span, .profile-card-views1 span{
+    font-size: 20px;
+  }
+  .profile-card-details1 h3 {
+   font-weight: bolder;
+   font-size: 24px;   
+  }
+  
+  .profile-card-status1 span{
+    font-size: 20px; 
+  }
+  
+  
+  .profile-card-views1, .profile-card-status1{
+    text-align: center;
+    padding-top: 10px;
+  }
+  
+  .profile-card-details1, .profile-card-status1, .profile-card-views1{
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eaeaea;
+  }
+  
+  .some-content1{
+    height: 200px;
+    background-color: papayawhip;
+  }
+  
+  .padding-zero1{
+    padding: 0px;
+  }
+  
+  .small-circle1{
+    height: 100px;
+    width: 100px;
+    background-color: gray;
+    border-radius: 57px;
+  }
+  .edit-button {
+      float: right;
+  }
+  
+  /* ============= TOP TAB ============= */
+  
+  .top-tab .menu .item {
+    font-size: 17px !important;
+  }
+  
+  .pop-genie{
+    background-color: white;
+    margin-top: 20px;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+  }
+  
+  .top-tab{
+    padding: 0px 15px 15px 15px;
+  }
+  
+  /* ============= OTHER ============= */
+  
+  .padding-15{
+    padding: 15px;
+  }
+  
+  .form-field{
+    min-height: 81px;
+  }
+  
+  
+  
+  

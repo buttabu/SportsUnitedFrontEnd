@@ -29,7 +29,6 @@ class Home extends Component {
         <Helmet title="Home"/>
         {user.credential ?
           (<div className="container">
-            
             <div className="hidden-xs col-sm-3 col-md-3 col-lg-2">
               <HomeProfileCard auth={auth} />
             </div>
