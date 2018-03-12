@@ -182,7 +182,49 @@ export const source = [
 
 
 
+export const filterdata = [
+  {
+    name: "Cosmopolita Soccer League",
+    description: "best league in nyc",
+    id: 1,
+    season: "spring",
+    team_reg_price: 1500,
+    ind_reg_price: 200,
+    goal_size: "official",
+    field_size: "official"
+  },
+  {
+    name: "Soccer League 2",
+    description: "best league in nyc",
+    id: 2,
+    season: "spring",
+    team_reg_price: 1500,
+    ind_reg_price: 200,
+    goal_size: "official",
+    field_size: "official"
+  },
+  {
+    name: "Soccer League 3",
+    description: "best league in nyc",
+    id: 3,
+    season: "spring",
+    team_reg_price: 1500,
+    ind_reg_price: 200,
+    goal_size: "official",
+    field_size: "official"
+  },
+  {
+    name: "Soccer League 4",
+    description: "best league in nyc",
+    id: 4,
+    season: "spring",
+    team_reg_price: 1500,
+    ind_reg_price: 200,
+    goal_size: "official",
+    field_size: "official"
+  },
 
+]
 
 
 
