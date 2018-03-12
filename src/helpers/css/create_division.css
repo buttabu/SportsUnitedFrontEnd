@@ -42,7 +42,7 @@
   border: 1.4px solid #b7b7b7;
   border-radius: 7px;
   padding: 10px;
-  margin: 0px 3px;
+  /*margin: 0px 3px;*/
   padding-right: 0px; /*temporary padding, will remove when we have a profile pic*/
 }
 

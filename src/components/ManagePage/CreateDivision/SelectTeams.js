@@ -77,7 +77,7 @@ export default class SelectTeams extends Component{
         <div className="col-md-12 padding-zero">
           <div className="col-md-12 padding-15">
             <h4>Select teams or athletes from anywhere in your league</h4>
-            <Search loading={isLoading} onSearchChange={this.handleSearchChange} results={searchResults} value={value} resultRenderer={renderResults} {...this.props} />
+            <Search loading={isLoading} onSearchChange={this.handleSearchChange} results={searchResults} value={value} resultRenderer={renderResults}  />
           </div>
 
           {hasValue(viewCurrentSelection) && 
