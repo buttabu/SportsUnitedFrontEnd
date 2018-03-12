@@ -53,11 +53,18 @@ div, span, body, label, h1, h2, h3, h4, a {
 }
 
 
-/* ============= APP CONTENT ============= */
+/* ============= GLOBAL CSS ============= */
 
-.app-content{
-  /*margin-top: 50px;*/
+.pop-genie, .inner-pop-genie{
+  background-color: white;
+  margin-top: 15px;
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
 }
+
+.inner-pop-genie{
+  padding: 0px 0px 15px 0px;
+}
+
 
 
 /* ========================================= */
