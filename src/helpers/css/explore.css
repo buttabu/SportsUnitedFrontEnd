@@ -50,18 +50,28 @@
 }
 
 
-/* ============= ABU CSS ============= */
+/* ============= FILTER CSS ============= */
 
-.ui.checkbox .box, .ui.checkbox label {
-  cursor: auto;
-  position: relative;
+.filter-category .ui.checkbox label {
   display: block;
-  padding-left: 24px; 
-  outline: 0;
+  padding-left: 24px;
   font-size: 17px;
 }
 
+.filter-search{
+  margin-bottom: 10px;
+}
 
+.ui.checkbox{
+  display: block;
+}
 
+.league-filter .ui.input {
+  display: block;
+}
+
+.filter-set .ui.checkbox label {
+  font-size: 14px;
+}
 
 

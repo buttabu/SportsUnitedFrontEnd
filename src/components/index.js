@@ -19,6 +19,9 @@ export HomeProfileCard from './HomeProfileCard/HomeProfileCard';
 export ManagePage from './ManagePage/ManagePage';
 export SportaCard from './SportaCard/SportaCard';
 
-//
+//MANAGE
 export CreateDivisionForm from './ManagePage/CreateDivision/CreateDivisionForm';
 export SelectTeams from './ManagePage/CreateDivision/selectTeams';
+
+//FILTER
+export FilterBar from './Filter/FilterBar/FilterBar';
