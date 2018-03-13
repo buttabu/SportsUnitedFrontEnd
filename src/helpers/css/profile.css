@@ -1,0 +1,108 @@
+/* ===================================== */
+/* ============= HOME CSS ============= */
+/* ===================================== */
+
+/* ============= PROFILECARD ============= */
+
+.profile{
+    padding: 0px;
+    width: 100%;
+  }
+  
+  .top-bar{
+    height: 175px;
+    background-color: #3b5998;
+    position: relative;
+  }
+  
+  .circle{
+    height: 128px;
+    width: 128px;
+    border-radius: 50%;
+    background-color:grey;
+    top: 57%;
+    left: 40%;
+    z-index: 10;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .profile-details{
+    padding-top: 65px;
+    text-align: center;
+    background-color: #f7f7f7;
+  }
+  
+  .profile-details span, .profile-status span, .profile-views span{
+    display: block;
+    font-weight: bolder;
+    margin-bottom: 2px;
+  }
+  
+  .profile-details span, .profile-views span{
+    font-size: 20px;
+  }
+  .profile-details h3 {
+   font-weight: bolder;
+   font-size: 24px;   
+  }
+  
+  .profile-status span{
+    font-size: 20px; 
+  }
+  
+  
+  .profile-views, .profile-status{
+    text-align: center;
+    padding-top: 10px;
+  }
+  
+  .profile-details, .profile-status, .profile-views{
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eaeaea;
+  }
+  
+  .some-content{
+    height: 200px;
+    background-color: papayawhip;
+  }
+  
+  .padding-zero{
+    padding: 0px;
+  }
+  .edit-button {
+      float: right;
+  }
+  .advertisement {
+  margin-top: 80px;
+  }
+  
+  /* ============= TOP TAB ============= */
+  
+  .top-tab .menu .item {
+    font-size: 17px !important;
+  }
+  
+  .pop-genie{
+    background-color: white;
+    margin-top: 20px;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+  }
+  
+  .top-tab{
+    padding: 0px 15px 15px 15px;
+  }
+  
+  /* ============= OTHER ============= */
+  
+  .padding-15{
+    padding: 15px;
+  }
+  
+  .form-field{
+    min-height: 81px;
+  }
+  
+  
+  
+  

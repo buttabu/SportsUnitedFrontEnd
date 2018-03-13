@@ -14,6 +14,7 @@ import {
   // Athlete,
   // Team,
   // League,
+  Profile,
   TeamProfile,
   LeagueProfile,
   Explore,
@@ -33,7 +34,16 @@ export default (store) => {
       <Route path="explore" component={Explore} />
       <Route path="register" component={Register} />
       <Route path="register/confirmation/:token" component={Register} />
+      <Route path="profile/:username" component={Profile} />
 
+
+      {/* for Athlete */}
+      <Route component={RequireLogin}>
+        <Route path="home" component={Home} />
+        <Route path="profile" component={Profile} />
+      </Route>
+      {/* end for Athlete */}
+      
       {/*
       <Route path="athletes" component={Athlete} />
 
