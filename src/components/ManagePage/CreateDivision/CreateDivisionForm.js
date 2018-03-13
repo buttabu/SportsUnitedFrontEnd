@@ -100,6 +100,7 @@ class CreateDivisionForm extends Component{
 
         <SelectTeams handleSelected={this.handleSelected} handleCardPlacement={this.handleCardPlacement} viewCurrentSelection={this.state.viewCurrentSelection} selectedTeams={this.state.selectedTeams} selectedAthletes={this.state.selectedAthletes}/>
 
+        
         <RenderButton className={mdsm_12} buttonClassName={""} label={"Create"} />
         {handleServerError()}
 
