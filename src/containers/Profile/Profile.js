@@ -5,10 +5,9 @@ import { bindActionCreators } from 'redux';
 import { ProfileCard } from 'components';
 import { load } from '../../actions/Auth/actions';
 import { UserDetails } from 'containers';
-import axios from 'axios';
 import { Message, Advertisement, List, Header } from 'semantic-ui-react'
 
-class Home extends Component {
+class Profile extends Component {
   constructor(props) {
     super(props);
   }
@@ -26,8 +25,8 @@ class Home extends Component {
     return (
       <div className="home">
         <Helmet title="Home"/>
-        {/* {user.credential ?
-          ( */}
+        {user.credential ?
+          (
           <div className="container">
             <div className="col-xs-12 col-sm-8 col-md-8 col-lg-8">
               <ProfileCard auth={auth} />
@@ -67,7 +66,7 @@ class Home extends Component {
 
           </div>)
 
-          {/* : (<UserDetails />) */}
+          : (<UserDetails />)
         
       }
       </div>
@@ -83,4 +82,4 @@ const mapStateToProps = (state) => ({
   auth: state.auth
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);
