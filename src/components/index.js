@@ -19,7 +19,6 @@ export HomeProfileCard from './HomeProfileCard/HomeProfileCard';
 export ManagePage from './ManagePage/ManagePage';
 export SportaCard from './SportaCard/SportaCard';
 export ProfileCard from './ProfileCard/ProfileCard';
-
 //MANAGE
 export CreateDivisionForm from './ManagePage/CreateDivision/CreateDivisionForm';
 export SelectTeams from './ManagePage/CreateDivision/SelectTeams';

@@ -35,12 +35,14 @@ export default (store) => {
       <Route path="register" component={Register} />
       <Route path="register/confirmation/:token" component={Register} />
       <Route path="profile/:username" component={Profile} />
+      {/* Contact */}
+      {/* <Route path="contact" component={Contact} /> */}
 
 
       {/* for Athlete */}
       <Route component={RequireLogin}>
         <Route path="home" component={Home} />
-        {/*<Route path="profile" component={Profile} /> */}
+        <Route path="profile" component={Profile} />
       </Route>
       {/* end for Athlete */}
       
