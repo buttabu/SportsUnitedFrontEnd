@@ -1,10 +1,4 @@
-# CTP-Plugr
-
-## CUNY Tech Prep - Section 3 - Football Plugr
-
-----	
-### Getting started with the boilerplate code:
-
+# SPORTA
 
 ----	
 #### Clone the repo and run 
