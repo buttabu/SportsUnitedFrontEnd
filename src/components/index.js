@@ -22,7 +22,7 @@ export ProfileCard from './ProfileCard/ProfileCard';
 
 //MANAGE
 export CreateDivisionForm from './ManagePage/CreateDivision/CreateDivisionForm';
-export SelectTeams from './ManagePage/CreateDivision/selectTeams';
+export SelectTeams from './ManagePage/CreateDivision/SelectTeams';
 
 //FILTER
 export FilterBar from './Filter/FilterBar/FilterBar';
