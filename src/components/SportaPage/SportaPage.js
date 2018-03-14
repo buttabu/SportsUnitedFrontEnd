@@ -16,7 +16,7 @@ export default class SportaPage extends Component {
       <div className="sporta-page">
         <Photo className="background" photoClassName="background-photo" src={tempIMG} parentsHeight="" />
         <div className="sporta-message col-xs-10 col-sm-10 col-md-5 col-lg-5">
-          <span>A Centralized Platform to Connect Leagues, Teams and Players</span>
+          <span>A simple platform to connect you to the best leagues in town</span>
         </div>
       </div>
     );

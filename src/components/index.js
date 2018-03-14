@@ -4,7 +4,7 @@
  *  ie: import { CounterButton, InfoBar } from 'components';
  *
  */
-
+export About from './About/About';
 export LoginForm from './LoginForm/LoginForm';
 export SportaPage from './SportaPage/SportaPage';
 export LeagueTable from './LeagueTable/LeagueTable';

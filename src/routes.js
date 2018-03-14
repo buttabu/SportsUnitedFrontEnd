@@ -36,7 +36,7 @@ export default (store) => {
       <Route path="register/confirmation/:token" component={Register} />
       <Route path="profile/:username" component={Profile} />
       {/* Contact */}
-      <Route path="contact" component={Contact} />
+      {/* <Route path="contact" component={Contact} /> */}
 
 
       {/* for Athlete */}

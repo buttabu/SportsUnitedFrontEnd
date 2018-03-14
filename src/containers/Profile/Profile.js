@@ -25,8 +25,8 @@ class Profile extends Component {
     return (
       <div className="home">
         <Helmet title="Home"/>
-        {user.credential ?
-          (
+        {/* {user.credential ?
+          ( */}
           <div className="container">
             <div className="col-xs-12 col-sm-8 col-md-8 col-lg-8">
               <ProfileCard auth={auth} />
@@ -43,7 +43,6 @@ class Profile extends Component {
               </Message.List>
             </Message>
               </div>
-
               <div className="advertisement hidden-xs hidden-sm hidden-md col-lg-3">  
               <h3>Advertisement</h3>
               <Advertisement unit='medium rectangle' test='Ad' />
@@ -51,7 +50,6 @@ class Profile extends Component {
               
             </div>
             
-
           {/* Dashboard */}
           <div className="col-xs-12 col-sm-10 col-md-8 col-lg-8">
           <div className="pop-genie">
@@ -63,23 +61,18 @@ class Profile extends Component {
           </List>
           </div>
           </div>
-
           </div>)
-
-          : (<UserDetails />)
+          {/* : (<UserDetails />) */}
         
       }
       </div>
     );
   }
 }
-
 const mapDispatchToProps = (dispatch) => ({
   actions: bindActionCreators({load}, dispatch)
 });
-
 const mapStateToProps = (state) => ({
   auth: state.auth
 });
-
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);

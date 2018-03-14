@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { SportaPage, LoginForm, Loader } from 'components';
+import { SportaPage, LoginForm, Loader, About } from 'components';
 import { load, loginSaveUser } from '../../actions/Auth/actions';
 
 class Sporta extends Component {
@@ -58,6 +58,8 @@ class Sporta extends Component {
             }
           </div>
         }
+
+        <About />
 
       </div>
     );

@@ -9,6 +9,8 @@ export default class ProfileCard extends Component {
   render() {
     const { auth } = this.props;
     const credential = auth.user.credential; 
+    // console.log("PROPS", this.props);
+    // console.log("USER credential", credential)
 
     const renderCredential = () => {
       const cred = credential ==="A" ? "Athlete" : null
