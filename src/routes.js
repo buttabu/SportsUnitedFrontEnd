@@ -40,7 +40,7 @@ export default (store) => {
       {/* for Athlete */}
       <Route component={RequireLogin}>
         <Route path="home" component={Home} />
-        <Route path="profile" component={Profile} />
+        {/*<Route path="profile" component={Profile} /> */}
       </Route>
       {/* end for Athlete */}
       

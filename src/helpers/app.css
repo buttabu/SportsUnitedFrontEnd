@@ -65,6 +65,14 @@ div, span, body, label, h1, h2, h3, h4, a {
   padding: 0px 0px 15px 0px;
 }
 
+/* ============= SPORTA FOOTER CSS ============= */
+
+.sporta-footer{
+  height: 200px;
+  background-color: #eaeaea;
+  margin-top: 30px;
+  bottom: 0;
+}
 
 
 /* ========================================= */

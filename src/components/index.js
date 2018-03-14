@@ -4,7 +4,7 @@
  *  ie: import { CounterButton, InfoBar } from 'components';
  *
  */
-
+export About from './About/About';
 export LoginForm from './LoginForm/LoginForm';
 export SportaPage from './SportaPage/SportaPage';
 export LeagueTable from './LeagueTable/LeagueTable';
@@ -18,6 +18,7 @@ export AdvanceSettings from './AdvanceSettings/AdvanceSettings';
 export HomeProfileCard from './HomeProfileCard/HomeProfileCard';
 export ManagePage from './ManagePage/ManagePage';
 export SportaCard from './SportaCard/SportaCard';
+export ProfileCard from './ProfileCard/ProfileCard';
 
 //MANAGE
 export CreateDivisionForm from './ManagePage/CreateDivision/CreateDivisionForm';

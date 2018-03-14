@@ -29,6 +29,7 @@ import '../../helpers/css/advance_settings.css';
 import '../../helpers/css/manage.css';
 import '../../helpers/css/create_division.css';
 import '../../helpers/css/profile.css';
+import '../../helpers/css/about.css';
 
 @asyncConnect([{
   promise: ({ store: { dispatch, getState } }) => {
@@ -152,12 +153,10 @@ export default class App extends Component {
           {this.props.children}
         </div>
 
-        {/*
-        <div className="well text-center">
-          FOOTER
-        </div>
-        */}
 
+        {/*<div className="sporta-footer">
+          FOOTER
+        </div>*/}
 
       </div>
     );

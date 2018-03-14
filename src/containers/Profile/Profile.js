@@ -5,10 +5,9 @@ import { bindActionCreators } from 'redux';
 import { ProfileCard } from 'components';
 import { load } from '../../actions/Auth/actions';
 import { UserDetails } from 'containers';
-import axios from 'axios';
-import { Message, Advertisement, List, Header } from 'semantic-ui-react'
+import { Message, Advertisement, List, Header } from 'semantic-ui-react';
 
-class Home extends Component {
+class Profile extends Component {
   constructor(props) {
     super(props);
   }
@@ -21,16 +20,16 @@ class Home extends Component {
   // }
   render() {
     const { auth } = this.props;
-    const user = auth.user;
-    const credential = auth.user.credential; 
+    // const user = auth.user;
+    // const credential = auth.user.credential; 
     return (
-      <div className="home">
-        <Helmet title="Home"/>
+      <div className="profile">
+        <Helmet title="Profile"/>
         {/* {user.credential ?
           ( */}
           <div className="container">
             <div className="col-xs-12 col-sm-8 col-md-8 col-lg-8">
-              <ProfileCard auth={auth} />
+              {/*<ProfileCard auth={auth} /> */}
             </div>
           
             {/* Message */}
@@ -40,7 +39,7 @@ class Home extends Component {
               <Message.Header>New Messages</Message.Header>
               <Message.List>
                 <Message.Item>Next Match: Randall's Island 4:00 PM (Team A vs Team B)</Message.Item>
-                <Message.Item>League Owners wants {auth.user.first_name} to be a Team Captain</Message.Item>
+                <Message.Item>League Owners wants [Name] [Last Name] to be a Team Captain</Message.Item>
               </Message.List>
             </Message>
               </div>
@@ -83,4 +82,4 @@ const mapStateToProps = (state) => ({
   auth: state.auth
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);
