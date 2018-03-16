@@ -25,8 +25,8 @@ class Profile extends Component {
     return (
       <div className="home">
         <Helmet title="Home"/>
-        {/* {user.credential ?
-          ( */}
+        {user.credential ?
+          (
           <div className="container">
             <div className="col-xs-12 col-sm-8 col-md-8 col-lg-8">
               <ProfileCard auth={auth} />
@@ -62,7 +62,7 @@ class Profile extends Component {
           </div>
           </div>
           </div>)
-          {/* : (<UserDetails />) */}
+          : (<UserDetails />)
         
       }
       </div>

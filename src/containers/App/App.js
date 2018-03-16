@@ -140,6 +140,12 @@ export default class App extends Component {
                 </LinkContainer>
               )}
               {/* athlete */}
+              
+              {/* Contact*/}
+              <LinkContainer to="/contact">
+                <NavItem>Contact Us</NavItem>
+              </LinkContainer>
+              {/* Contact */}
 
             </Nav>
             {user && (

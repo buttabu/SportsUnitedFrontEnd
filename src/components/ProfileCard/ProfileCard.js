@@ -40,7 +40,7 @@ export default class ProfileCard extends Component {
           <div className="col-sm-12 col-md-12 profile-details">
           <div className="edit-button">
 
-          <Modal trigger={<Button icon='edit' />} basic size='small' closeIcon>
+          {/* <Modal trigger={<Button icon='edit' />} basic size='small' closeIcon>
             <Header icon='edit' content='Update Information' />
             <Modal.Content>
             <p>Pleases Update your Information!!!!</p>
@@ -54,7 +54,7 @@ export default class ProfileCard extends Component {
             </Form>
 
             </Modal.Actions>
-        </Modal>
+        </Modal> */}
 
          </div>
             {(credential === "A") &&

@@ -12,3 +12,4 @@ export UserDetails from './UserDetails/UserDetails';
 export Explore from './Explore/Explore';
 export Manage from './Manage/Manage';
 export Profile from './Profile/Profile';
+export Contact from './Contact/Contact';
