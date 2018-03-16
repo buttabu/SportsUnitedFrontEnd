@@ -8,7 +8,7 @@
   text-align: center;
   letter-spacing: 1px;
   font-weight: bolder;
-  margin: 30px 0px 40px 0px;
+  margin: 50px 0px 60px 0px;
 }
 
 .pic-box{
@@ -19,10 +19,91 @@
 .inner-title{
   display: block;
   font-size: 19px;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
 .about-sporta i.large.icon, i.large.icons {
   font-size: 2.5em;
+  margin-right: 10px;
+  color: #3b5998;
 }
+
+.icon-text{
+  display: inline-flex;
+}
+
+.about-sub-header{
+  font-size: 25px;
+  display: block;
+  text-align: center;
+  /*letter-spacing: 1px;*/
+  /*font-weight: bolder;*/
+  margin: 30px 0px 10px 0px;
+}
+
+.golie-photo{
+  margin-left: -92px;
+  -webkit-transform: scale(1.6);
+  transform:scale(1.6);
+  -ms-transform:scale(1.6);  /*IE 9*/
+  -moz-transform:scale(1.6); /*Firefox*/
+  -webkit-transform:scale(1.6); /*Safari and Chrome*/
+  -o-transform:scale(1.6); /*Opera*/
+  object-fit: contain;
+  min-height: 390px;
+}
+
+.about-photo{
+  margin-left: -30px;
+  overflow: hidden;
+}
+
+.about-box{
+  background-color: #809ae5;
+  color: white;
+  padding: 25px 15px 0px 15px;
+}
+
+.about-box i.large.icon, i.large.icons {
+  color: white;
+}
+
+.manager-photo{
+  background: url("../../components/About/manager2.jpg") no-repeat center center;
+  height: 450px;
+}
+
+.heavy-divider{
+  margin: 60px 0px 50px 0px !important;
+}
+
+.heavy-divider-2{
+  margin: 60px 0px 0px 0px !important;
+}
+
+
+.about-price-detail{
+  height: 1000px;
+  background-color: #f7f7f7;
+}
+
+
+/* ============================= */
+/* ====== MEDIA QUEIRIES ======= */
+/* ============================= */
+
+@media only screen and (max-width: 767px){
+  .about-photo{
+    margin-right: -15px;
+    margin-bottom: 15px;
+  }
+}
+
+
+
+
+
+
+
+
 
