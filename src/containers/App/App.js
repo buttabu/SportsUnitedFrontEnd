@@ -159,10 +159,9 @@ export default class App extends Component {
           {this.props.children}
         </div>
 
-
-        {/*<div className="sporta-footer">
-          FOOTER
-        </div>*/}
+        <div className="col-sm-12 col-md-12 sporta-footer">
+          
+        </div>
 
       </div>
     );

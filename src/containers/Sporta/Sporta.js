@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { SportaPage, LoginForm, Loader, About } from 'components';
 import { load, loginSaveUser } from '../../actions/Auth/actions';
+import { Divider } from 'semantic-ui-react';
 
 class Sporta extends Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class Sporta extends Component {
     this.state = {
       height: 0,
       width: 0,
+      beta: true
     }
     this.updateDimensions = this.updateDimensions.bind(this);
   }
@@ -40,6 +42,7 @@ class Sporta extends Component {
 
   render() {
     // console.log("PROPS IN Sporta", this.props);
+    const { beta } = this.state;
     return (
       <div className="sporta">
         <Helmet title="sporta" />
@@ -49,12 +52,14 @@ class Sporta extends Component {
         {this.props.auth.isLogedOut &&
           <div>
             <div className="register-sporta">
-              <Link to="/register">
-                <span className="sporta-btn">REGISTER WITH SPORTA</span>
+              <Link to={beta ? "/contact"  : "/register" }>
+                  <span className="sporta-btn">{beta ? "CONTACT SPORTA" : "REGISTER WITH SPORTA"}</span>
               </Link>
             </div>
             {this.props.auth.isFetching ? <Loader className="col-xs-12 col-sm-6 col-md-4 col-lg-4"/> :
-              <LoginForm outerClassName={"col-xs-12 col-sm-6 col-md-4 col-lg-4"} serverError={this.props.auth.error} {...this.props.actions} />
+              (!this.state.beta &&
+                <LoginForm outerClassName={"col-xs-12 col-sm-6 col-md-4 col-lg-4"} serverError={this.props.auth.error} {...this.props.actions} />
+              )
             }
           </div>
         }
