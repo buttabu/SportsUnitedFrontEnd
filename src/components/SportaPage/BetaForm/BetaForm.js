@@ -19,12 +19,9 @@ class BetaForm extends Component{
   }
 
   render(){
-    console.log(" === > PROPS IN BetaForm", this.props);
-    console.log(" === > STATE IN BetaForm", this.state);
-    
     const { fields: { name, email, credential, message }, values, handleSubmit, error} = this.props; 
   
-    const smmd12 = "col-sm-12 col-md-12";
+    const smmd12 = "col-xs-12 col-sm-12 col-md-12";
     const smmd4 = "col-xs-4 col-sm-4 col-md-4";
     const credentialOptions = [ 
       {label:'Athlete', value:'p', name:'credential'}, 
@@ -49,16 +46,16 @@ class BetaForm extends Component{
             <RenderInput field={name} outerClassName={smmd4 + " form-field padding-zero"} placeholder={"Name"} inputClassName={smmd12} />
             <RenderInput field={email} outerClassName={smmd4 + " form-field padding-zero"} placeholder={"Email"} inputClassName={smmd12} />
             <RenderSelect field={credential} outerClassName={smmd4 + " form-field padding-zero"} value={credential.value} options={credentialOptions} placeholder={"Who are you?"} inputClassName={smmd12} {...credential}/>
-            <RenderTextBox field={message} rows={3} outerGroupClassName={smmd12 + " message-field padding-zero"} placeholder={"Write us a message"} textAreaClassName={smmd12} />
+            <RenderTextBox field={message} rows={1} outerGroupClassName={smmd12 + " message-field padding-zero"} placeholder={"Write us a message"} textAreaClassName={smmd12} />
             {error && <p className="text-danger"><strong>{error}</strong></p>}
-            <RenderButton className={"col-md-4"} buttonClassName={"beta-btn"} label={"Register"} />
+            <RenderButton className={"col-xs-4 col-sm-3 col-md-4"} buttonClassName={"beta-btn"} label={"Register"} />
           </form>
         </div>
       );
     }
 
     return(
-      <div className="beta-form col-xs-12 col-sm-12 col-md-6"> 
+      <div className="beta-form col-xs-12 col-sm-12 col-md-5"> 
         {this.state.betaFormSent ? (renderSuccess()) : (renderFormFields()) }
       </div>
     )

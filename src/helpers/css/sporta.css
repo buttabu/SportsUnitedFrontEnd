@@ -113,7 +113,7 @@
 }
 
 .form-field{
-  height: 60px;
+  height: 54px;
 }
 
 .beta-btn{
@@ -176,20 +176,20 @@
 }
 
 .beta-form input::placeholder, .beta-form textarea::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #b8b8b8;;
+  color: #b8b8b8;
   opacity: 1; /* Firefox */
 }
 
 .beta-form input:-ms-input-placeholder, .beta-form textarea:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: #b8b8b8;;
+  color: #b8b8b8;
 }
 
 .beta-form input::-ms-input-placeholder .beta-form textarea::-ms-input-placeholder{ /* Microsoft Edge */
-  color: #b8b8b8;;
+  color: #b8b8b8;
 }
 
 .beta-form .Select-placeholder{
-  color: #b8b8b8;;
+  color: #b8b8b8;
 }
 
 /* ============================= */
@@ -222,25 +222,74 @@
 
 
 
-@media only screen and (max-width: 840px){
-  .sporta-page-top{
-    top: 70px !important;
-  }
-
-  .sporta-message{
-    letter-spacing: 1px;
-    font-size: 18px;
-  }
-}
-
-
-@media only screen and (max-width: 597px){
+@media only screen and (max-width: 919px){
   .sporta-page-top{
     top: 60px !important;
   }
   .sporta-message{
     letter-spacing: 1px;
-    font-size: 12px;
-    padding: 10px;
+    font-size: 19px;
+    margin-bottom: 15px;
+  }
+  .beta-form-title{
+    font-size: 17px;
   }
 }
+
+
+@media only screen and (max-width: 597px){
+  .sporta-message{
+    letter-spacing: 1px;
+    font-size: 14px;
+    /*padding: 10px;*/
+  }
+  .beta-form-title{
+    font-size: 12px;
+  }
+  .beta-form input::placeholder, .beta-form textarea::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    font-size: 12px;
+  }
+
+  .beta-form input:-ms-input-placeholder, .beta-form textarea:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    font-size: 12px;
+  }
+
+  .beta-form input::-ms-input-placeholder .beta-form textarea::-ms-input-placeholder{ /* Microsoft Edge */
+    font-size: 12px;
+  }
+  .beta-form .Select-placeholder{
+    font-size: 12px;
+  }
+  .beta-btn{
+    font-size: 12px;
+  }
+}
+
+
+@media only screen and (max-width: 400px){
+  .beta-form input::placeholder, .beta-form textarea::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    font-size: 10px;
+  }
+
+  .beta-form input:-ms-input-placeholder, .beta-form textarea:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    font-size: 10px;
+  }
+
+  .beta-form input::-ms-input-placeholder .beta-form textarea::-ms-input-placeholder{ /* Microsoft Edge */
+    font-size: 10px;
+  }
+  .beta-form .Select-placeholder{
+    font-size: 10px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
