@@ -30,6 +30,7 @@ import '../../helpers/css/manage.css';
 import '../../helpers/css/create_division.css';
 import '../../helpers/css/profile.css';
 import '../../helpers/css/about.css';
+import '../../helpers/css/contact.css';
 
 @asyncConnect([{
   promise: ({ store: { dispatch, getState } }) => {
