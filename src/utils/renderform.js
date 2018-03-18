@@ -7,17 +7,32 @@ import match from 'utils/validation';
 // ====== REDUX RENDER FORM ======
 // ===============================
 
-export const RenderInput = ({field, label, labelClassName, inputClassName, placeholder='', type='text', outerClassName=null}) => {
+export const RenderInput = ({field, label, labelClassName, inputClassName, placeholder, type='text', outerClassName=null}) => {
   return(
     <div className={`${field.error && field.touched ? 'has-error' : ''} ${outerClassName ? outerClassName : ""}`}>
-      <label className={labelClassName}>{label}</label>
+      {label && <label className={labelClassName}>{label}</label>}
       <div className={inputClassName}>
-        <input type={type} className="form-control" name={field.name} placeholder={placeholder} {...field} />
+        <input type={type} className="form-control" name={field.name} placeholder={placeholder ? placeholder : ''} {...field} />
         {field.error && field.touched && <span className="glyphicon glyphicon-remove form-control-feedback"></span>}
         {field.error && field.touched && <div className="text-danger"><strong>{field.error}</strong></div>}
       </div>
     </div>
   )
+}
+
+
+export const RenderTextBox = ({field, label, placeholder, rows, outerGroupClassName, labelClassName, textAreaClassName}) => {
+  return(
+    <div className={outerGroupClassName + (field.error ? ' has-error' : '') }>
+      {label && <label className={labelClassName}>{label}</label>}
+      <div className={textAreaClassName}>
+        {/* textarea className - resizes textbox vertical only */}
+        <textarea className="textarea" rows={rows} placeholder={placeholder ? placeholder : ''} name={field.name} {...field}></textarea>
+        {field.error && <div className="text-danger">{field.error}</div>}
+      </div>
+
+    </div>
+    );
 }
 
 // export class RenderInput extends Component {
@@ -61,10 +76,10 @@ export class RenderSelect extends Component {
     return value.value ? this.props.onBlur({ value }) : this.props.onBlur(value)
   }
   render() {
-    const { field, value, options, label, labelClassName, inputClassName, placeholder} = this.props;
+    const { field, value, options, label, labelClassName, inputClassName, placeholder, outerClassName=null} = this.props;
     return(
-      <div className={`form-group ${field.error && field.touched ? 'has-error' : ''}`}>
-        <label className={labelClassName}>{label}</label>
+      <div className={`${field.error && field.touched ? 'has-error' : ''} ${outerClassName ? outerClassName : ""}`}>
+        {label && <label className={labelClassName}>{label}</label>}
         <div className={inputClassName}>
           <Select
             name={field.name}
