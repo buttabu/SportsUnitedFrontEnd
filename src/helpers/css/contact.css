@@ -11,3 +11,11 @@
 .send-btn {
 	margin: 10px;
 }
+.form-title {
+	display: block;
+	color: black;
+	font-size: 19px;
+	margin: 15px 0px 15px 0px;
+	text-align: center;
+	letter-spacing: 2px;
+}
