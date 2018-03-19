@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
-import { Photo } from 'components';
+import { Photo, BetaForm } from 'components';
 
 export default class SportaPage extends Component {
   constructor(props) {
@@ -15,9 +14,19 @@ export default class SportaPage extends Component {
     return (
       <div className="sporta-page">
         <Photo className="background" photoClassName="background-photo" src={tempIMG} parentsHeight="" />
-        <div className="sporta-message col-xs-10 col-sm-10 col-md-5 col-lg-5">
+        {/*<div className="sporta-message col-xs-10 col-sm-10 col-md-5 col-lg-5">
           <span>A simple platform to connect you to the best leagues in town</span>
         </div>
+        */}
+        <div className="sporta-page-top col-md-12">
+          <div className="sporta-message col-xs-12 col-sm-12 col-md-6">
+            <span>Matching you to the best sports leagues in town.</span>
+          </div>
+          
+          <BetaForm />
+          
+        </div>
+
       </div>
     );
   }

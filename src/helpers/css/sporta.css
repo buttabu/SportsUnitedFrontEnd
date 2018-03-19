@@ -30,17 +30,24 @@
 
 /* ============= MESSAGE ON TOP OF BACKGROUND ============= */
 
-.sporta-message{
+.sporta-page-top{
   position: absolute;
-  left: 1%;
-  border: 3px solid white;
+  top: 87px;
+  margin: 10px;
+}
+
+.sporta-message{
   color: white;
-  border-radius: 11px;
-  padding: 20px;
-  text-align: center;
-  letter-spacing: 4px;
+  letter-spacing: 3px;
   font-size: 32px;
-  top: 150px;
+}
+
+.beta-form{
+  border: 2px solid white;
+  color: white;
+  /* border-radius: 11px; */
+  padding: 10px 0px;
+  /* text-align: center; */
 }
 
 .register-sporta{
@@ -66,6 +73,123 @@
   /*background-color: #008000;*/ /*ALSO GOOD COLOR FOR BUTTONS*/
   width: 250px;
   padding: 15px 0px;
+}
+
+
+/* ============= BETA FORM ============= */
+
+.beta-form-title{
+  display: block;
+  color: white;
+  font-size: 19px;
+  margin: 0px 0px 15px 0px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.beta-form .form-control{
+  font-size: 14px;
+  color: white;
+  border-radius: 0;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  border-bottom-width: 2px;
+  background-color: transparent;
+  box-shadow: none;
+  border-bottom-color: white;
+  /*border-bottom-color: rgba(76,88,111,.76);*/
+}
+
+.beta-form .form-control:focus{
+  border-bottom-color: rgb(102, 175, 233);
+  border-bottom-width: 3px;
+}
+
+
+.beta-form label{
+  color: white;
+  font-size: 14px;
+}
+
+.form-field{
+  height: 54px;
+}
+
+.beta-btn{
+  margin-top: 10px;
+  width: 100%;
+  font-size: 14px;
+  color: black;
+  border-radius: 50px;
+  background-color: white;
+  letter-spacing: 2px;
+  border-color: transparent;
+}
+
+.beta-form .btn:hover{
+  color: white;
+  background-color: #2996cc;
+  border-color: transparent;
+}
+
+.beta-form .btn:focus{
+  outline: 0;
+}
+
+.beta-form .Select-control{
+  background-color: transparent;
+  border-radius: 0 !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-top: 0 !important;
+  border-bottom-width: 2px !important;
+  border-color: rgb(59,89,152) !important;
+  border-bottom-color: white !important;
+}
+
+.beta-form .Select.is-focused:not(.is-open) > .Select-control{
+  background-color: transparent;
+}
+
+.beta-form .Select.has-value.Select--single > .Select-control .Select-value .Select-value-label{
+  color: white;
+}
+
+.beta-form .message-field textarea {
+  border-radius: 14px;
+  border-width: 2px;
+  background-color: transparent;
+  box-shadow: none;
+  border-bottom-color: white;
+  border-left: 0;
+  border-right: 0;
+  /*border-top-color: white;*/
+  border-top: 0;
+  width: 100%;
+}
+
+.beta-form .message-field textarea:focus{
+  border-color: rgb(102, 175, 233);
+  border-width: 3px;
+  outline: 0;
+}
+
+.beta-form input::placeholder, .beta-form textarea::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #b8b8b8;
+  opacity: 1; /* Firefox */
+}
+
+.beta-form input:-ms-input-placeholder, .beta-form textarea:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #b8b8b8;
+}
+
+.beta-form input::-ms-input-placeholder .beta-form textarea::-ms-input-placeholder{ /* Microsoft Edge */
+  color: #b8b8b8;
+}
+
+.beta-form .Select-placeholder{
+  color: #b8b8b8;
 }
 
 /* ============================= */
@@ -98,18 +222,74 @@
 
 
 
-@media only screen and (max-width: 840px){
+@media only screen and (max-width: 919px){
+  .sporta-page-top{
+    top: 60px !important;
+  }
   .sporta-message{
-    font-size: 21px;
-    top: 70px !important;
+    letter-spacing: 1px;
+    font-size: 19px;
+    margin-bottom: 15px;
+  }
+  .beta-form-title{
+    font-size: 17px;
   }
 }
 
 
 @media only screen and (max-width: 597px){
   .sporta-message{
+    letter-spacing: 1px;
     font-size: 14px;
-    top: 60px !important;
-    padding: 10px;
+    /*padding: 10px;*/
+  }
+  .beta-form-title{
+    font-size: 12px;
+  }
+  .beta-form input::placeholder, .beta-form textarea::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    font-size: 12px;
+  }
+
+  .beta-form input:-ms-input-placeholder, .beta-form textarea:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    font-size: 12px;
+  }
+
+  .beta-form input::-ms-input-placeholder .beta-form textarea::-ms-input-placeholder{ /* Microsoft Edge */
+    font-size: 12px;
+  }
+  .beta-form .Select-placeholder{
+    font-size: 12px;
+  }
+  .beta-btn{
+    font-size: 12px;
   }
 }
+
+
+@media only screen and (max-width: 400px){
+  .beta-form input::placeholder, .beta-form textarea::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    font-size: 10px;
+  }
+
+  .beta-form input:-ms-input-placeholder, .beta-form textarea:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    font-size: 10px;
+  }
+
+  .beta-form input::-ms-input-placeholder .beta-form textarea::-ms-input-placeholder{ /* Microsoft Edge */
+    font-size: 10px;
+  }
+  .beta-form .Select-placeholder{
+    font-size: 10px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+

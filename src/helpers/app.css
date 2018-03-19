@@ -74,6 +74,10 @@ div, span, body, label, h1, h2, h3, h4, a {
   margin-bottom: 15px;
 }
 
+.text-area{
+  resize: vertical;
+}
+
 /* ============= SPORTA FOOTER CSS ============= */
 
 .sporta-footer{
