@@ -2,8 +2,8 @@ import React from 'react';
 import { IndexRoute, Route } from 'react-router';
 import { isLoaded as isAuthLoaded } from 'redux/modules/auth';
 import { load as loadAuth, logout } from 'actions/Auth/actions';
-import { 
-  App, 
+import {
+  App,
   RequireLogin,
   Sporta,
   NotFound,
@@ -14,6 +14,7 @@ import {
   // Athlete,
   // Team,
   // League,
+  Contact,
   Profile,
   TeamProfile,
   LeagueProfile,
@@ -36,7 +37,7 @@ export default (store) => {
       <Route path="register/confirmation/:token" component={Register} />
       <Route path="profile/:username" component={Profile} />
       {/* Contact */}
-      {/* <Route path="contact" component={Contact} /> */}
+      <Route path="contact" component={Contact} />
 
 
       {/* for Athlete */}
@@ -45,13 +46,13 @@ export default (store) => {
         <Route path="profile" component={Profile} />
       </Route>
       {/* end for Athlete */}
-      
+
       {/*
       <Route path="athletes" component={Athlete} />
 
       <Route path="leagues" component={League} />
       <Route path="leagues/profile/:leagueName" component={LeagueProfile} />
-      
+
       <Route path="teams" component={Team} />
       <Route path="teams/profile/:teamProfile" component={TeamProfile} />
       */}
@@ -62,7 +63,7 @@ export default (store) => {
       </Route>
 
       {/* Catch all other routes */}
-      
+
       <Route path="*" component={NotFound} status={404} />
 
     </Route>
@@ -86,11 +87,11 @@ export default (store) => {
 // import { IndexRoute, Route } from 'react-router';
 // import { isLoaded as isAuthLoaded } from 'redux/modules/auth';
 // import { load as loadAuth, logout } from 'actions/Auth/actions';
-// import { 
-//   App, 
-//   Home, 
+// import {
+//   App,
+//   Home,
 //   NotFound,
-//   Register, 
+//   Register,
 //   Account,
 //   Athlete,
 //   Team,
@@ -135,36 +136,35 @@ export default (store) => {
 //       <Route onEnter={requireLogin}>
 //         <Route path="account" component={Account} />
 //       </Route>
-      
 
-//       {/* Routes disallow login 
+
+//       {/* Routes disallow login
 //       <Route onEnter={requireNotLogged}>
 //         <Route path="register" component={Register} />
 //       </Route>*/}
-      
+
 
 //       {/* Routes */}
 //       <Route path="athletes" component={Athlete} />
 
 //       <Route path="leagues" component={League} />
 //       <Route path="leagues/profile/:leagueName" component={LeagueProfile} />
-      
+
 //       <Route path="teams" component={Team} />
 //       <Route path="teams/profile/:teamProfile" component={TeamProfile} />
-      
+
 
 //       <Route path="register" component={Register} />
 //       <Route path="register/confirmation/:token" component={Register} />
-      
+
 //       {/*<Route component={RequireLogin}>
 //         <Route path="account" component={Account} />
 //       </Route> */}
 
 //       {/* Catch all other routes */}
-      
+
 //       <Route path="*" component={NotFound} status={404} />
 
 //     </Route>
 //   );
 // };
-

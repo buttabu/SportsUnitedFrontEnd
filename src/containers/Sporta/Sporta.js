@@ -15,6 +15,7 @@ class Sporta extends Component {
       height: 0,
       width: 0,
       beta: true
+      // beta: false
     }
     this.updateDimensions = this.updateDimensions.bind(this);
   }
