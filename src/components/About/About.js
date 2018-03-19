@@ -8,7 +8,7 @@ export default class About extends Component {
   }
 
   render() {
-    const sm12md12 = "col-sm-12 col-md-12";
+    const sm12md12 = "col-xs-12 col-sm-12 col-md-12";
     const flying_goalie = "https://static1.squarespace.com/static/55ea2481e4b0902fc052322c/55edff23e4b05e517b4fca88/55edffc2e4b03d3d6e7aa526/1441660886352/ENZ_4621-7.jpg?format=1000w"
 
     return (
@@ -17,9 +17,9 @@ export default class About extends Component {
         <div className="container-fuild">
           <span className="about-header">Let the game find you.</span>
 
-          <Photo className="col-sm-6 col-md-6 about-photo" photoClassName="img-responsive golie-photo" src={flying_goalie} parentsHeight={""} />
+          <Photo className="col-xs-12 col-sm-6 col-md-6 about-photo" photoClassName="img-responsive golie-photo" src={flying_goalie} parentsHeight={""} />
           
-          <div className="col-sm-6 col-md-6">
+          <div className="col-xs-12 col-sm-6 col-md-6">
             <span className="inner-title">Find the nearest and best recreational league for you based on your preference</span>
             <p className="text-muted bottom-15">The features we provide for athletes and free of charge, we aim to build a community around sports. This idea originated from our love for sports
             and wanting everyone to fully enjoy the game. These features will aim to bring a sense of professionalism to the game, while keeping it very social

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { reduxForm } from 'redux-form';
-import { RenderInput, RenderButton, RenderTextBox } from '../../utils/renderform';
+import { RenderInput, RenderButton, RenderSelect, RenderTextBox } from '../../utils/renderform';
 import { hasValue } from '../../utils/utilfunctions';
 import ContactValidation from './ContactValidation';
 
@@ -14,19 +14,25 @@ class Contact extends Component {
 
 handleSubmit = (values) => {
   console.log("Contact Form Values", values);
-  console.log("We have received your message and we will get in touch shortly. Thanks!");
   this.setState({formSent: true})
 }
 
   render() {
-    const {fields: { firstName, lastName, email, company, message }, handleSubmit, error, outerClassName, serverError } = this.props;
-    const mdsm_12 = "col-xs-12 col-sm-12 col-md-12 col-lg-12";
-    const md ="col-md-4 col-lg-4";
+    console.log("PROPS CONTACT", this.props);
+    const {fields: { name, email, credential, message }, handleSubmit, error, serverError } = this.props;
+    const outerClassName = "col-xs-12 col-sm-12 col-md-12 padding-zero";
+    const smmd12 = "col-xs-12 col-sm-12 col-md-12";
+    const credentialOptions = [ 
+      {label:'Athlete', value:'p', name:'credential'}, 
+      {label:'Team Captain', value:'t', name:'credential'},
+      {label:'League Organizer', value:'l', name:'credential'},
+      {label:'Other', value:'o', name:'credential'}
+    ];    
 
     const renderFormSuccess = () => {
       return(
-        <div className="col-sm-12 col-md-12 col-lg-12">
-          <span className="form-title">We have received your message and we will get in touch shortly. Thanks!</span>
+        <div className="col-sm-12 col-md-12">
+          <span className="form-title">Thank you for contacting us !</span>
         </div>
       );
     }
@@ -34,39 +40,35 @@ handleSubmit = (values) => {
     const renderForm = () => {
       return(
         <div>
-        <h4 className="header">CONTACT SPORTA</h4>
+          <div className="col-xs-12 col-sm-6 col-md-6">
+            <span className="form-title">Please contact us regarding any questions, partnerships, beta registration, ideas, collaborations, etc.</span>
+          </div>
+          <form className="col-xs-12 col-sm-6 col-md-6 padding-15" onSubmit={handleSubmit(this.handleSubmit)}>
+            <RenderInput field={name} outerClassName={outerClassName} labelClassName={smmd12} label={"Full Name"} inputClassName={smmd12} />
+            <RenderInput field={email} outerClassName={outerClassName} labelClassName={smmd12} label={"Email"} inputClassName={smmd12} />
+            <RenderSelect field={credential} outerClassName={outerClassName} value={credential.value} labelClassName={smmd12} label={"Tell us who you are"} options={credentialOptions} inputClassName={smmd12} {...credential}/>
+            <RenderTextBox field={message} outerClassName={outerClassName} label={"Message"} rows={3} labelClassName={smmd12} textAreaClassName={smmd12} />
+            {error && <p className="text-danger"><strong>{error}</strong></p>}
+            <RenderButton className={smmd12} buttonClassName={"col-xs-4 col-sm-3 col-md-2"} label={"Send"} />
+          </form>
 
-        {/* <div className="col-sm-12 col-md-12 col-lg-12"> */}
-        <form onSubmit={handleSubmit(this.handleSubmit)}>
-        <RenderInput field={firstName} labelClassName={mdsm_12} label={"First Name"} inputClassName={md} />
-        <RenderInput field={lastName} labelClassName={mdsm_12} label={"Last Name"} inputClassName={md} />
-        <RenderInput field={email} labelClassName={mdsm_12} label={"Email"} inputClassName={md} />
-        <RenderInput field={company} labelClassName={mdsm_12} label={"Company"} inputClassName={md} />
-        <RenderInput field={message} labelClassName={mdsm_12} label={"Message"}placeholder={"Any message"} inputClassName={md} />
-
-            {error && <p className="text-danger"> <strong>{errie}</strong></p>}
-
-        <RenderButton className="col-xs-12 col-sm-12 col-md-9 col-lg-9 send-btn" buttonClassName={""} label={"Send"} />
-        </form>
-        {/* </div> */}
         </div>
       );
     }
 
-
-
     return (
       <div className="container pop-genie">
-      <div className="col-sm-12 col-md-12 col-lg-12">
-      {this.state.formSent ? (renderFormSuccess()) : (renderForm()) }
-      </div>
+        <div className="col-sm-12 col-md-12">
+          {this.state.formSent ? (renderFormSuccess()) : (renderForm()) }
+        </div>
       </div>
     )
   }
 }
+
 export default reduxForm({
-form: 'ContactForm',
-fields: ['firstName', 'lastName','email','company', 'message'],
+form: 'Contact',
+fields: ['name','email','credential', 'message'],
 validate: ContactValidation,
 forceUnregisterOnUnmount: true,
 })(Contact)

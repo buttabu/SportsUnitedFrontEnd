@@ -5,7 +5,6 @@ const validate = createValidator({
   name: required,
   email: [email, required],
   credential: required,
-
 });
 
 export default memoize(10)(validate);

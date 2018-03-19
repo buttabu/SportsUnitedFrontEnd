@@ -78,8 +78,8 @@
 }
 
 .heavy-divider-2{
-  margin: 60px 0px 0px -1000px !important;
-  width: 3000px;
+  margin: 60px 0px 0px 0px !important;
+  /*width: 3000px;*/
 }
 
 .about-timeline{
@@ -181,16 +181,22 @@
 /* ====== MEDIA QUEIRIES ======= */
 /* ============================= */
 
+@media screen and (max-width: 991px) {
+  .timeline{
+    margin: 60px auto;
+  }
+}
+
 @media only screen and (max-width: 767px){
   .about-photo{
-    margin-right: -15px;
+    margin-left: 0px;
     margin-bottom: 15px;
   }
 }
 
-@media screen and (max-width: 991px) {
-  .timeline{
-    margin: 60px auto;
+@media only screen and (max-width: 667px){
+  .about-photo{
+    margin-left: 0px;
   }
 }
 

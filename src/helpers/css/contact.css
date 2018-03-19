@@ -2,20 +2,9 @@
 /* ============= Contact CSS ============= */
 /* ===================================== */
 
-.header {
-	padding-top: 20px;
-	font-size: 30px;
-	font-weight: bolder;
-	text-align: center;
-}
-.send-btn {
-	margin: 10px;
-}
 .form-title {
-	display: block;
-	color: black;
-	font-size: 19px;
-	margin: 15px 0px 15px 0px;
-	text-align: center;
-	letter-spacing: 2px;
+  display: block;
+  font-size: 17px;
+  margin: 15px 0px 15px 0px;
+  letter-spacing: 1px;
 }

@@ -30,6 +30,9 @@ div, span, body, label, h1, h2, h3, h4, a {
   font-family: "OpenSans-Light";
 }
 
+/*#content{
+  position: relative;
+}*/
 
 /* ============= NAV BAR ============= */
 
@@ -74,17 +77,21 @@ div, span, body, label, h1, h2, h3, h4, a {
   margin-bottom: 15px;
 }
 
-.text-area{
+textarea{
   resize: vertical;
+  width: 100%;
 }
 
 /* ============= SPORTA FOOTER CSS ============= */
 
 .sporta-footer{
-  height: 200px;
+  height: 400px;
   background-color: #eaeaea;
-  margin-top: 30px;
-  bottom: 0;
+  position: absolute;
+  margin-bottom: 0px;
+  margin-top: 50px;
+  border: none;
+  box-shadow: none;
 }
 
 

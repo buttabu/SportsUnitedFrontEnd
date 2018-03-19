@@ -113,6 +113,7 @@ export default class App extends Component {
            <Navbar.Collapse>
             <Nav navbar>
 
+              {/*
               <LinkContainer to="/explore">
                 <NavItem className="trophy icon">Explore</NavItem>
               </LinkContainer>
@@ -121,7 +122,7 @@ export default class App extends Component {
                 <LinkContainer to="/register">
                   <NavItem>Register</NavItem>
                 </LinkContainer>
-              )}
+              )} */}
 
               {user && (
                 <LinkContainer to="/home">
@@ -129,22 +130,23 @@ export default class App extends Component {
                 </LinkContainer>
               )}
 
+              {/*
               {user && user.credential === "L" && (
                 <LinkContainer to="/manage">
                   <NavItem >Manage</NavItem>
                 </LinkContainer>
               )}
-                {/* athlete */}
-                {user && user.credential === "A" && (
+              
+              {user && user.credential === "A" && (
                 <LinkContainer to="/profile">
                   <NavItem>Profile</NavItem>
                 </LinkContainer>
               )}
-              {/* athlete */}
+              */}
               
               {/* Contact*/}
               <LinkContainer to="/contact">
-                <NavItem>Contact Us</NavItem>
+                <NavItem>Contact</NavItem>
               </LinkContainer>
               {/* Contact */}
 
@@ -160,8 +162,7 @@ export default class App extends Component {
           {this.props.children}
         </div>
 
-        <div className="col-sm-12 col-md-12 sporta-footer">
-          
+        <div className="col-xs-12 col-sm-12 col-md-12 well sporta-footer">
         </div>
 
       </div>

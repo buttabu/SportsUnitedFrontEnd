@@ -21,16 +21,15 @@ export const RenderInput = ({field, label, labelClassName, inputClassName, place
 }
 
 
-export const RenderTextBox = ({field, label, placeholder, rows, outerGroupClassName, labelClassName, textAreaClassName}) => {
+export const RenderTextBox = ({field, label, placeholder, rows, outerClassName, labelClassName, textAreaClassName}) => {
   return(
-    <div className={outerGroupClassName + (field.error ? ' has-error' : '') }>
+    <div className={`${outerClassName ? outerClassName : ""} ${field.error && field.touched ? ' has-error' : ''}`}>
       {label && <label className={labelClassName}>{label}</label>}
       <div className={textAreaClassName}>
         {/* textarea className - resizes textbox vertical only */}
         <textarea className="textarea" rows={rows} placeholder={placeholder ? placeholder : ''} name={field.name} {...field}></textarea>
-        {field.error && <div className="text-danger">{field.error}</div>}
+        {field.error && field.touched &&  <div className="text-danger">{field.error}</div>}
       </div>
-
     </div>
     );
 }
