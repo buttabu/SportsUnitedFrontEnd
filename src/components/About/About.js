@@ -15,7 +15,7 @@ export default class About extends Component {
       <div className="about-sporta">
         
         <div className="container-fuild">
-          <span className="about-header">Let the game find you.</span>
+          <p className="about-header">Let the game find you.</p>
 
           <Photo className="col-xs-12 col-sm-6 col-md-6 about-photo" photoClassName="img-responsive golie-photo" src={flying_goalie} parentsHeight={""} />
           

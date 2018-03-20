@@ -21,14 +21,29 @@
         url("/fonts/OpenSans-Light.tff") format("ttf");
 }
 
+/*@font-face {
+  font-family: 'LANENAR';
+  font-weight: normal;
+  font-style: normal;
+  color: black;
+  src: local('LANENAR'), url("fonts/LANENAR.woff") format("woff"),
+        url("/fonts/LANENAR.woff2") format("woff2"),
+        url("/fonts/LANENAR.tff") format("ttf");
+}*/
 
 /* =================================== */
 /* ============= APP CSS ============= */
 /* =================================== */
 
-div, span, body, label, h1, h2, h3, h4, a {
-  font-family: "OpenSans-Light";
+div, span, body, label, h1, h2, h3, h4, button, input, a, textarea {
+  font-family: "OpenSans-Light" !important;
 }
+
+
+/*div, span, body, label, h1, h2, h3, h4, button, input, a {
+  font-family: "LANENAR" !important;
+}
+*/
 
 /*#content{
   position: relative;

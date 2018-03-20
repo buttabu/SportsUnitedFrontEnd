@@ -126,6 +126,7 @@ export default class App extends Component {
 
               {user && (
                 <LinkContainer to="/home">
+                  {/*<NavItem className="home-nav-tab">Home</NavItem>*/}
                   <NavItem className="home-nav-tab">Home</NavItem>
                 </LinkContainer>
               )}
@@ -154,6 +155,7 @@ export default class App extends Component {
             {user && (
               <AdvanceSettings {...this.props}/>
             )}
+
           </Navbar.Collapse>
 
         </Navbar>

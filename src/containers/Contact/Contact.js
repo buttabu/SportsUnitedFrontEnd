@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { reduxForm } from 'redux-form';
 import { RenderInput, RenderButton, RenderSelect, RenderTextBox } from '../../utils/renderform';
 import { hasValue } from '../../utils/utilfunctions';
 import ContactValidation from './ContactValidation';
+import { contactsporta } from '../../actions/Contact/actions';
+import { load } from '../../actions/Auth/actions';
 
 class Contact extends Component {
   constructor(props){
@@ -14,7 +18,14 @@ class Contact extends Component {
 
 handleSubmit = (values) => {
   console.log("Contact Form Values", values);
+  const result = {
+    name: values.name,
+    email: values.email,
+    credential: values.credential.value,
+    message: values.message
+  }
   this.setState({formSent: true})
+  this.props.actions.contactsporta(result);
 }
 
   render() {
@@ -23,10 +34,10 @@ handleSubmit = (values) => {
     const outerClassName = "col-xs-12 col-sm-12 col-md-12 padding-zero";
     const smmd12 = "col-xs-12 col-sm-12 col-md-12";
     const credentialOptions = [ 
-      {label:'Athlete', value:'p', name:'credential'}, 
-      {label:'Team Captain', value:'t', name:'credential'},
-      {label:'League Organizer', value:'l', name:'credential'},
-      {label:'Other', value:'o', name:'credential'}
+      {label:'Athlete', value:'A', name:'credential'}, 
+      {label:'Team Captain', value:'T', name:'credential'},
+      {label:'League Organizer', value:'L', name:'credential'},
+      {label:'Other', value:'O', name:'credential'}
     ];    
 
     const renderFormSuccess = () => {
@@ -66,9 +77,23 @@ handleSubmit = (values) => {
   }
 }
 
+const mapDispatchToProps = (dispatch) => ({
+  actions: bindActionCreators({ contactsporta, load }, dispatch)
+});
+
+const mapStateToProps = (state) => ({
+  auth: state.auth
+});
+
+
+Contact = connect(mapStateToProps, mapDispatchToProps)(Contact)
+
 export default reduxForm({
-form: 'Contact',
-fields: ['name','email','credential', 'message'],
-validate: ContactValidation,
-forceUnregisterOnUnmount: true,
+  form: 'Contact',
+  fields: ['name','email','credential', 'message'],
+  validate: ContactValidation,
+  forceUnregisterOnUnmount: true,
 })(Contact)
+
+
+
