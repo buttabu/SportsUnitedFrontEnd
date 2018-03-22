@@ -17,7 +17,6 @@ import { load as loadAuth, logoutRemoveUser as logout } from '../../actions/Auth
 import { AdvanceSettings } from 'components';
 
 import '../../helpers/app.css';
-import '../../helpers/css/sporta.css';
 import '../../helpers/css/explore.css';
 import '../../helpers/css/athlete.css';
 import '../../helpers/css/team.css';
@@ -31,6 +30,8 @@ import '../../helpers/css/create_division.css';
 import '../../helpers/css/profile.css';
 import '../../helpers/css/about.css';
 import '../../helpers/css/contact.css';
+import '../../helpers/css/sporta.css';
+import 'react-select/dist/react-select.css';
 
 @asyncConnect([{
   promise: ({ store: { dispatch, getState } }) => {
@@ -63,7 +64,7 @@ export default class App extends Component {
   };
 
   componentWillReceiveProps(nextProps) {
-    console.log("====> App.js NEXTPROPS: ", nextProps);
+    // console.log("====> App.js NEXTPROPS: ", nextProps);
     const isLoggingIn = nextProps.auth.user ? (nextProps.auth.user.request_login && !nextProps.auth.user.request_load) : false;
     const isLoading = nextProps.auth.user ? (!nextProps.auth.user.request_login && nextProps.auth.user.request_load): false;
 
@@ -92,7 +93,7 @@ export default class App extends Component {
   };
 
   render() {
-    console.log("====> App.js PROPS: ", this.props);
+    // console.log("====> App.js PROPS: ", this.props);
     const { user } = this.props.auth;
     const styles = require('./App.scss');
 

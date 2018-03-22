@@ -4,7 +4,7 @@
 
 /* ============= BACKGROUND ============= */
 
-.background{
+.sporta-background{
   overflow: hidden;
   /*margin-top: -215px;*/
   width: 100%;
@@ -152,8 +152,8 @@
   background-color: transparent;
 }
 
-.beta-form .Select.has-value.Select--single > .Select-control .Select-value .Select-value-label{
-  color: white;
+.beta-form .Select-value-label{
+  color: white !important;
 }
 
 .beta-form .message-field textarea {
@@ -242,10 +242,8 @@
 
 
 @media only screen and (max-width: 597px){
-  .sporta-message{
-    /*letter-spacing: 1px;*/
+  .sporta-message .beta-form-title{
     font-size: 14px;
-    /*padding: 10px;*/
   }
   .beta-form-title{
     font-size: 12px;
@@ -272,22 +270,25 @@
 
 
 @media only screen and (max-width: 433px){
-  .sporta-message{
-    font-size: 12px;
-  }
   .beta-form input::placeholder, .beta-form textarea::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    font-size: 10px;
+    font-size: 11px;
   }
 
   .beta-form input:-ms-input-placeholder, .beta-form textarea:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    font-size: 10px;
+    font-size: 11px;
   }
 
   .beta-form input::-ms-input-placeholder .beta-form textarea::-ms-input-placeholder{ /* Microsoft Edge */
-    font-size: 10px;
+    font-size: 11px;
   }
   .beta-form .Select-placeholder{
-    font-size: 10px;
+    font-size: 11px;
+  }
+  .tex-danger{
+    font-size: 11px;
+  }
+  .beta-form .form-control{
+    font-size: 12px;
   }
 }
 

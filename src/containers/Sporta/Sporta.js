@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { SportaPage, LoginForm, Loader, About } from 'components';
 import { load, loginSaveUser } from '../../actions/Auth/actions';
+import { contactsporta } from '../../actions/Contact/actions';
 import { Divider } from 'semantic-ui-react';
 
 class Sporta extends Component {
@@ -20,11 +21,11 @@ class Sporta extends Component {
     this.updateDimensions = this.updateDimensions.bind(this);
   }
 
-  componentWillMount(){
-    if(this.props.auth.isLogedOut){
-      this.props.actions.load();
-    }
-  }
+  // componentWillMount(){
+  //   if(this.props.auth.isLogedOut){
+  //     this.props.actions.load();
+  //   }
+  // }
 
   updateDimensions = () => {
     let winWidth = window.innerWidth; //let winWidth = $(window).width();
@@ -46,9 +47,9 @@ class Sporta extends Component {
     const { beta } = this.state;
     return (
       <div className="sporta">
-        <Helmet title="sporta" />
+        <Helmet title="Find your game" />
         
-        <SportaPage height={this.state.height} width={this.state.width}/>
+        <SportaPage height={this.state.height} width={this.state.width} contactsporta={this.props.actions.contactsporta}/>
 
         {this.props.auth.isLogedOut &&
           <div>
@@ -73,7 +74,7 @@ class Sporta extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  actions: bindActionCreators({ loginSaveUser, load }, dispatch)
+  actions: bindActionCreators({ loginSaveUser, load, contactsporta }, dispatch)
 });
 
 const mapStateToProps = (state) => ({

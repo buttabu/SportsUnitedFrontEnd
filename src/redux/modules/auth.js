@@ -39,7 +39,8 @@ export default function reducer(state = initialState, action = {}) {
       return Object.assign({}, state, {
         isFetching: false,
         isLoaded: false,
-        error: action.error
+        error: action.error,
+        user: null
       });
 
     // ===================================

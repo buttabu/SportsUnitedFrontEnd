@@ -17,7 +17,6 @@ class Contact extends Component {
   }
 
 handleSubmit = (values) => {
-  console.log("Contact Form Values", values);
   const result = {
     name: values.name,
     email: values.email,
@@ -29,7 +28,6 @@ handleSubmit = (values) => {
 }
 
   render() {
-    console.log("PROPS CONTACT", this.props);
     const {fields: { name, email, credential, message }, handleSubmit, error, serverError } = this.props;
     const outerClassName = "col-xs-12 col-sm-12 col-md-12 padding-zero";
     const smmd12 = "col-xs-12 col-sm-12 col-md-12";

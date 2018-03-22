@@ -12,15 +12,15 @@ const environment = {
 module.exports = Object.assign({
   host: process.env.HOST || 'localhost',
   port: process.env.PORT || 8080,
-  apiHost: process.env.APIHOST || 'http://localhost:8000/',
+  apiHost: process.env.APIHOST || 'http://52.90.93.190/',
   apiPort: process.env.APIPORT,
   app: {
     title: 'Sporta',
-    description: 'All the modern best practices in one example.',
+    description: 'Connecting athletes and leagues to one simple platform.',
     head: {
       titleTemplate: 'Sporta | %s',
       meta: [
-        { name: 'description', content: 'SPORTA: Centralized platform to connect leagues, teams, and players' },
+        { name: 'description', content: 'Sporta: Finding teams and leagues made easier' },
         { charset: 'utf-8' },
         { property: 'og:site_name', content: '' },
         { property: 'og:image', content: '' },
