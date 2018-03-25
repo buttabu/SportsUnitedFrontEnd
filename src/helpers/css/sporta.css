@@ -195,7 +195,7 @@
 
 .beta-modal{
   background-color: black !important;
-  height: max-content;
+  height: 286px !important;
 }
 
 .beta-btn-2{
@@ -212,6 +212,9 @@
   padding: 10px 0px !important;
 }
 
+.beta-modal i{
+  color: white !important;
+}
 
 /* ============================= */
 /* ====== MEDIA QUEIRIES ======= */

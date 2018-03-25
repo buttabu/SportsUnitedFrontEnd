@@ -29,7 +29,7 @@ export default class SportaPage extends Component {
             <BetaForm contactsporta={this.props.contactsporta}/>
           </div>
 
-          <Modal className="beta-modal" trigger={<Button className="beta-btn-2 hidden-sm hidden-md hidden-lg">Beta Registration</Button>} dimmer={"blurring"} size={"small"}>
+          <Modal className="beta-modal" trigger={<Button className="beta-btn-2 hidden-sm hidden-md hidden-lg">Beta Registration</Button>} dimmer={"blurring"} size={"small"} closeIcon>
             <BetaForm contactsporta={this.props.contactsporta}/>    
           </Modal>
 
