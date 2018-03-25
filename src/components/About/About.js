@@ -67,27 +67,27 @@ export default class About extends Component {
               <Icon name={"checkmark"} size={"large"} />
               <span className="text-label">Find Referees</span>
             </div>*/}
-            <div className="col-xs-6 col-sm-6 col-md-4 bottom-15 icon-text">
+            <div className="col-xs-12 col-sm-6 col-md-4 bottom-15 icon-text">
               <Icon name={"checkmark"} size={"large"} />
               <span className="text-label">Schedule Games</span>
             </div>
-            <div className="col-xs-6 col-sm-6 col-md-4 bottom-15 icon-text">
+            <div className="col-xs-12 col-sm-6 col-md-4 bottom-15 icon-text">
               <Icon name={"checkmark"} size={"large"} />
               <span className="text-label">Manage Teams</span>
             </div>
-            <div className="col-xs-6 col-sm-6 col-md-4 bottom-15 icon-text">
+            <div className="col-xs-12 col-sm-6 col-md-4 bottom-15 icon-text">
               <Icon name={"checkmark"} size={"large"} />
               <span className="text-label">Take Payments</span>
             </div>
-            <div className="col-xs-6 col-sm-6 col-md-4 bottom-15 icon-text">
+            <div className="col-xs-12 col-sm-6 col-md-4 bottom-15 icon-text">
               <Icon name={"checkmark"} size={"large"} />
               <span className="text-label">Track Stats</span>
             </div>
-            <div className="col-xs-6 col-sm-6 col-md-4 bottom-15 icon-text">
+            <div className="col-xs-12 col-sm-6 col-md-4 bottom-15 icon-text">
               <Icon name={"checkmark"} size={"large"} />
               <span className="text-label">Communicate</span>
             </div>
-            <div className="col-xs-6 col-sm-6 col-md-4 bottom-15 icon-text">
+            <div className="col-xs-12 col-sm-6 col-md-4 bottom-15 icon-text">
               <Icon name={"checkmark"} size={"large"} />
               <span className="text-label">Expand Your League</span>
             </div>
