@@ -30,7 +30,7 @@ class BetaForm extends Component{
     const { fields: { name, email, credential, message }, values, handleSubmit, error} = this.props; 
   
     const smmd12 = "col-xs-12 col-sm-12 col-md-12";
-    const smmd4 = "col-xs-6 col-sm-4 col-md-4";
+    const smmd4 = "col-xs-12 col-sm-4 col-md-4";
     const credentialOptions = [ 
       {label:'Athlete', value:'A', name:'credential'}, 
       {label:'Team Captain', value:'T', name:'credential'},
@@ -41,7 +41,7 @@ class BetaForm extends Component{
     const renderSuccess = () => {
       return(
         <div className="col-sm-12 col-md-12">
-          <span className="beta-form-title">Thank you for registering to our beta! we will get in contact with you as soon as possible</span>
+          <span className="beta-form-title">Thank you for registering to our beta! We will be in touch soon</span>
         </div>
       );
     }
@@ -54,7 +54,7 @@ class BetaForm extends Component{
             <RenderInput field={name} outerClassName={smmd4 + " form-field padding-zero"} placeholder={"Name"} inputClassName={smmd12} />
             <RenderInput field={email} outerClassName={smmd4 + " form-field padding-zero"} placeholder={"Email"} inputClassName={smmd12} />
             <RenderSelect field={credential} outerClassName={smmd4 + " form-field padding-zero"} value={credential.value} options={credentialOptions} placeholder={"Who are you?"} inputClassName={smmd12} {...credential}/>
-            <RenderTextBox field={message} rows={1} outerClassName={"col-xs-6 col-sm-12 col-md-12 message-field padding-zero"} placeholder={"Message"} textAreaClassName={smmd12} />
+            <RenderTextBox field={message} rows={1} outerClassName={"col-xs-12 col-sm-12 col-md-12 message-field padding-zero"} placeholder={"Message"} textAreaClassName={smmd12} />
             {error && <p className="text-danger"><strong>{error}</strong></p>}
             <RenderButton className={"col-xs-4 col-sm-3 col-md-4 pull-right"} buttonClassName={"beta-btn"} label={"Register"} />
           </form>

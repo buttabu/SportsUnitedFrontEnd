@@ -193,6 +193,26 @@
   color: #b8b8b8;
 }
 
+.beta-modal{
+  background-color: black !important;
+  height: max-content;
+}
+
+.beta-btn-2{
+  margin-top: 15px !important;
+  margin-left: 15px !important;
+  border-radius: 50px !important;
+  border: none !important;
+  font-size: 14px !important;
+  text-align: center !important;
+  cursor: pointer !important;
+  color: black !important;
+  background-color: white !important;
+  width: 150px !important;
+  padding: 10px 0px !important;
+}
+
+
 /* ============================= */
 /* ====== MEDIA QUEIRIES ======= */
 /* ============================= */
@@ -228,9 +248,7 @@
     top: 48px !important;
   }
   .sporta-message{
-    /*letter-spacing: 1px;*/
-    font-size: 19px;
-    /*margin-bottom: 15px;*/
+    font-size: 22px;
   }
   .beta-form-title{
     font-size: 17px;
@@ -242,8 +260,8 @@
 
 
 @media only screen and (max-width: 597px){
-  .sporta-message .beta-form-title{
-    font-size: 14px;
+  .sporta-message{
+    font-size: 19px;
   }
   .beta-form-title{
     font-size: 12px;

@@ -87,6 +87,13 @@ h1, h2, h3, h4, button, label, input, a, textarea{
   padding: 0px 0px 15px 0px;
 }
 
+.margin-t15{
+  margin-top: 15px;
+}
+
+.margin-t30{
+  margin-top: 30px;
+}
 
 .bottom-15{
   margin-bottom: 25px;
@@ -99,6 +106,7 @@ h1, h2, h3, h4, button, label, input, a, textarea{
 textarea{
   resize: vertical;
   width: 100%;
+  border: 1px solid #cccccc;
 }
 
 /* ============= SPORTA FOOTER CSS ============= */

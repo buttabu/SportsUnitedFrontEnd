@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Photo, BetaForm } from 'components';
+import { Button, Modal } from 'semantic-ui-react'
 
 export default class SportaPage extends Component {
   constructor(props) {
@@ -20,14 +21,26 @@ export default class SportaPage extends Component {
         */}
         <div className="sporta-page-top col-md-12">
           <div className="sporta-message col-xs-12 col-sm-12 col-md-6">
-            <p>Matching you to the best sports leagues in town.</p>
+            <p>Seamlessly manage your league and we'll connect the right athletes to you</p>
+            <p className="margin-t30">Register and be Sporta</p>
           </div>
           
-          <BetaForm contactsporta={this.props.contactsporta}/>
-          
+          <div className="hidden-xs">
+            <BetaForm contactsporta={this.props.contactsporta}/>
+          </div>
+
+          <Modal className="beta-modal" trigger={<Button className="beta-btn-2 hidden-sm hidden-md hidden-lg">Beta Registration</Button>} dimmer={"blurring"} size={"small"}>
+            <BetaForm contactsporta={this.props.contactsporta}/>    
+          </Modal>
+
         </div>
 
       </div>
     );
   }
 }
+
+// <p>Need to manage or expand your league?</p>
+// <p>Looking for the right team to play in?</p>
+// <p>Seamlessly league management for those in charge and matching athletes to the best sports leagues in town.</p>
+// 

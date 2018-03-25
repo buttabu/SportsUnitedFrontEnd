@@ -20,7 +20,7 @@ export default class About extends Component {
           <Photo className="col-xs-12 col-sm-6 col-md-6 about-photo" photoClassName="img-responsive golie-photo" src={flying_goalie} parentsHeight={""} />
           
           <div className="col-xs-12 col-sm-6 col-md-6">
-            <span className="inner-title">Find the nearest and best recreational league based on your preference</span>
+            <span className="inner-title">As an athlete find recreational leagues based on your preference or skill level</span>
             <p className="text-muted bottom-15">The features we provide for athletes are free of charge, we aim to build a community around sports. This idea originated from our love for sports
             and wanting everyone to fully enjoy the game. These features will aim to bring a sense of professionalism to the game, while keeping it very social
             and interactive</p>
