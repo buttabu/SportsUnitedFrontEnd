@@ -1,3 +1,5 @@
+import Supporters from "./Supporters/Supporters";
+
 export App from './App/App';
 export RequireLogin from './RequireLogin/RequireLogin';
 export Home from './Home/Home';
@@ -13,3 +15,4 @@ export Explore from './Explore/Explore';
 export Manage from './Manage/Manage';
 export Profile from './Profile/Profile';
 export Contact from './Contact/Contact';
+export Supporters from './Supporters/Supporters';

@@ -31,6 +31,7 @@ import '../../helpers/css/create_division.css';
 import '../../helpers/css/profile.css';
 import '../../helpers/css/about.css';
 import '../../helpers/css/contact.css';
+import '../../helpers/css/supporters.css';
 
 @asyncConnect([{
   promise: ({ store: { dispatch, getState } }) => {
@@ -131,19 +132,25 @@ export default class App extends Component {
                 </LinkContainer>
               )}
 
-              {/*
+              
               {user && user.credential === "L" && (
                 <LinkContainer to="/manage">
                   <NavItem >Manage</NavItem>
                 </LinkContainer>
               )}
+
+              {user && user.credential === "L" && (
+                <LinkContainer to="/supporters">
+                  <NavItem >Supporters</NavItem>
+                </LinkContainer>
+              )}
               
-              {user && user.credential === "A" && (
+              {/* {user && user.credential === "A" && (
                 <LinkContainer to="/profile">
                   <NavItem>Profile</NavItem>
                 </LinkContainer>
-              )}
-              */}
+              )} */}
+             
               
               {/* Contact*/}
               <LinkContainer to="/contact">

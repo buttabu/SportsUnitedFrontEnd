@@ -19,6 +19,7 @@ import {
   TeamProfile,
   LeagueProfile,
   Explore,
+  Supporters,
 } from 'containers';
 
 export default (store) => {
@@ -60,6 +61,7 @@ export default (store) => {
       <Route component={RequireLogin}>
         <Route path="home" component={Home} />
         <Route path="manage" component={Manage} />
+        <Route path="supporters" component={Supporters} />
       </Route>
 
       {/* Catch all other routes */}

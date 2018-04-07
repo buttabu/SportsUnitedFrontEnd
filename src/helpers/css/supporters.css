@@ -1,0 +1,22 @@
+.supporter-info{
+    margin-top: 20px;
+}
+h4 span {
+    border: 1px solid black;
+    padding: 5px;
+    font-size: 20px;
+}
+.bottom-header{
+    margin-top: 20px;
+}
+.bottom-header h4 {
+    font-size: 30px;
+    font-weight: bolder;
+    letter-spacing: 2px;
+}
+.support-cards{
+    margin-top: 20px;
+}
+.panel-heading {
+    padding: 60px;
+}
