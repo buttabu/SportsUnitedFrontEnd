@@ -4,7 +4,7 @@
 
 /* ============= BACKGROUND ============= */
 
-.background{
+.sporta-background{
   overflow: hidden;
   /*margin-top: -215px;*/
   width: 100%;
@@ -152,8 +152,8 @@
   background-color: transparent;
 }
 
-.beta-form .Select.has-value.Select--single > .Select-control .Select-value .Select-value-label{
-  color: white;
+.beta-form .Select-value-label{
+  color: white !important;
 }
 
 .beta-form .message-field textarea {
@@ -193,6 +193,29 @@
   color: #b8b8b8;
 }
 
+.beta-modal{
+  background-color: black !important;
+  height: 286px !important;
+}
+
+.beta-btn-2{
+  margin-top: 15px !important;
+  margin-left: 15px !important;
+  border-radius: 50px !important;
+  border: none !important;
+  font-size: 14px !important;
+  text-align: center !important;
+  cursor: pointer !important;
+  color: black !important;
+  background-color: white !important;
+  width: 150px !important;
+  padding: 10px 0px !important;
+}
+
+.beta-modal i{
+  color: white !important;
+}
+
 /* ============================= */
 /* ====== MEDIA QUEIRIES ======= */
 /* ============================= */
@@ -228,9 +251,7 @@
     top: 48px !important;
   }
   .sporta-message{
-    /*letter-spacing: 1px;*/
-    font-size: 19px;
-    /*margin-bottom: 15px;*/
+    font-size: 22px;
   }
   .beta-form-title{
     font-size: 17px;
@@ -243,9 +264,7 @@
 
 @media only screen and (max-width: 597px){
   .sporta-message{
-    /*letter-spacing: 1px;*/
-    font-size: 14px;
-    /*padding: 10px;*/
+    font-size: 19px;
   }
   .beta-form-title{
     font-size: 12px;
@@ -272,22 +291,25 @@
 
 
 @media only screen and (max-width: 433px){
-  .sporta-message{
-    font-size: 12px;
-  }
   .beta-form input::placeholder, .beta-form textarea::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    font-size: 10px;
+    font-size: 11px;
   }
 
   .beta-form input:-ms-input-placeholder, .beta-form textarea:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    font-size: 10px;
+    font-size: 11px;
   }
 
   .beta-form input::-ms-input-placeholder .beta-form textarea::-ms-input-placeholder{ /* Microsoft Edge */
-    font-size: 10px;
+    font-size: 11px;
   }
   .beta-form .Select-placeholder{
-    font-size: 10px;
+    font-size: 11px;
+  }
+  .tex-danger{
+    font-size: 11px;
+  }
+  .beta-form .form-control{
+    font-size: 12px;
   }
 }
 

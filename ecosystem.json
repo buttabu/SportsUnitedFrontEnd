@@ -1,0 +1,16 @@
+{
+  "apps" : [
+
+    {
+      "name": "SPORTA",
+      "script": "./bin/server.js",
+      "instances"  : 0,
+      "exec_mode"  : "fork",
+      "env": {
+        "NODE_ENV": "production",
+        "PORT": 7777,
+        "NODE_PATH": "./src"
+      }
+    }
+  ]
+}

@@ -46,7 +46,7 @@ export default class Html extends Component {
           {Object.keys(assets.styles).length === 0 ?
             <style dangerouslySetInnerHTML={{ __html: '#content{display:none}' }} /> : null}
 
-          <link rel="stylesheet" href="https://unpkg.com/react-select/dist/react-select.css" />
+          {/*<link rel="stylesheet" href="https://unpkg.com/react-select/dist/react-select.css" />*/}
           <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"></link>
 
         </head>

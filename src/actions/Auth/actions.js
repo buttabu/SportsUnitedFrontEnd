@@ -14,7 +14,7 @@ import { LOAD_USER_REQUEST, LOAD_USER_SUCCESS, LOAD_USER_FAILURE,
 export function register(body) {
   return {
     types: [REGISTER_USER_REQUEST, REGISTER_USER_SUCCESS, REGISTER_USER_FAILURE],
-    promise: client => client.post('rest-auth/registration/', {
+    promise: client => client.post('api/rest-auth/registration/', {
         data: body,
     })
   };
@@ -39,7 +39,7 @@ export function verifyEmail(token){
 export function load() {
   return {
     types: [LOAD_USER_REQUEST, LOAD_USER_SUCCESS, LOAD_USER_FAILURE],
-    promise: (client) => client.get('rest-auth/user/',{
+    promise: (client) => client.get('api/rest-auth/user/',{
       authenticated: true,
     })
   };
@@ -53,7 +53,7 @@ export function load() {
 export function login(body) {
   return {
     types: [LOGIN_USER_REQUEST, LOGIN_USER_SUCCESS, LOGIN_USER_FAILURE],
-    promise: (client) => client.post('rest-auth/login/', {
+    promise: (client) => client.post('api/rest-auth/login/', {
       data: body,
     })
   };
@@ -85,7 +85,7 @@ export function loginSaveUser(body, flag){
 export function logout() {
   return {
     types: [LOGOUT_USER_REQUEST, LOGOUT_USER_SUCCESS, LOGOUT_USER_FAILURE],
-    promise: client => client.post('rest-auth/logout/')
+    promise: client => client.post('api/rest-auth/logout/')
   };
 }
 
